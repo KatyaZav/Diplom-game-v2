@@ -6,20 +6,26 @@ namespace Bubbles
 {
     public class BubbleColorRandom
     {
-        private GameObject[] _colors;
+        private ColorType[] _colors;
 
-        public BubbleColorRandom(GameObject[] colors)
+        public BubbleColorRandom(ColorType[] colors)
         {
             _colors = colors;
         }
 
-        public GameObject GetRandomColor()
+        /// <summary>
+        /// Get random color from class list
+        /// </summary>
+        public ColorType GetRandomColor()
         {
             var randomIndex = Random.Range(0, _colors.Length);
             return _colors[randomIndex];
         }
 
-        public static GameObject GetRandomColor(GameObject[] colors)
+        /// <summary>
+        /// Get random color from list
+        /// </summary>
+        public static ColorType GetRandomColor(ColorType[] colors)
         {
             var randomIndex = Random.Range(0, colors.Length);
             return colors[randomIndex];
