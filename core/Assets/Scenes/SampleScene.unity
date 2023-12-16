@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 133819337}
   - component: {fileID: 133819336}
   - component: {fileID: 133819338}
+  - component: {fileID: 133819339}
   m_Layer: 5
   m_Name: character
   m_TagString: Untagged
@@ -236,8 +237,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8, y: -153.7651}
-  m_SizeDelta: {x: 742.2482, y: 853.3564}
+  m_AnchoredPosition: {x: -8, y: -134.94}
+  m_SizeDelta: {x: 742.25, y: 891.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &133819336
 MonoBehaviour:
@@ -298,6 +299,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &133819339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133819334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c58fb2a66f5bf241bb73605f8fd8fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _generators:
+  - name: Left
+    _eyeImage: {fileID: 594648587}
+    _sideType: 0
+  - name: Right
+    _eyeImage: {fileID: 80287048}
+    _sideType: 1
+  _anim: {fileID: 133819338}
+  _timeBetween: 60
 --- !u!1 &198706540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,8 +1226,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.163208, y: -194.89752}
-  m_SizeDelta: {x: 233.267, y: 304.48547}
+  m_AnchoredPosition: {x: 6.163208, y: -266.74}
+  m_SizeDelta: {x: 233.27, y: 448.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1263973585
 MonoBehaviour:

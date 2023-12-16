@@ -1,13 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Bubbles;
-using System.Linq;
 
-public class Generator : MonoBehaviour
+[System.Serializable]
+public class Generator
 {
+    [SerializeField] private string name;
+    [SerializeField] private Image _eyeImage;
+    [SerializeField] private GeneratorSideType _sideType;
+
     private ColorType[] _colorTypeChoosed;
-    private IChooseble _generateMethon;
+    private IChooseble _generateMethod;
+
+    public IChooseble GenerateMethon
+    {
+        get => _generateMethod;
+        private set { _generateMethod = value; }
+    }
+
+    public Generator(GeneratorSideType type)
+    {
+        name = type.ToString();
+        _sideType = type;
+        _colorTypeChoosed = new ColorType[] { ColorType.blue };
+        _generateMethod = new SimpleChoose();
+    }
+
 
     /// <summary>
     /// Check color answer with generator
@@ -42,7 +62,7 @@ public class Generator : MonoBehaviour
             ans -= methond.probability;
             if (ans <= 0)
             {
-                _generateMethon = methond.method;
+                GenerateMethon = methond.method;
                 return;
             }
         }
@@ -51,9 +71,11 @@ public class Generator : MonoBehaviour
     }
 }
 
-[System.Serializable]
 public class MethondProbability
 {
     public IChooseble method;
     public int probability;
 }
+
+
+
