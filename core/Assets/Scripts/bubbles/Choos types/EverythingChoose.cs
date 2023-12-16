@@ -1,17 +1,19 @@
-using Bubbles;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EverythingChoose : IChooseble
+namespace Bubbles
 {
-    public void Chosed()
+    public class EverythingChoose : IChooseble
     {
-        throw new System.NotImplementedException();
-    }
+        public void Chosed()
+        {
+            throw new System.NotImplementedException();
+        }
 
-    public ColorType[] GenerateAnswer(ColorType[] colors)
-    {
-        return colors;
+        public ColorType[] GenerateAnswer(ColorType[] colors)
+        {
+            return colors;
+        }
     }
 }
