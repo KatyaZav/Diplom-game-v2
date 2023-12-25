@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    [SerializeField] Bubbles.ColorsHolder _holder;
     [SerializeField] private List<Generator> _generators = new List<Generator> {new Generator(GeneratorSideType.left), new Generator(GeneratorSideType.right)};
     [SerializeField] private Animator _anim;
 
