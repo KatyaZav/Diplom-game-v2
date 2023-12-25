@@ -2,7 +2,7 @@ namespace Bubbles
 {
     public interface IChooseble
     {
-        ColorType[] GenerateAnswer(ColorType[] colors);
+        ColorType[] GenerateAnswer(ColorTypes[] colors);
         void Chosed();
     }
 }

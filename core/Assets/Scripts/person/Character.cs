@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    [SerializeField] Bubbles.ColorsHolder _holder;
-    [SerializeField] private List<Generator> _generators = new List<Generator> {new Generator(GeneratorSideType.left), new Generator(GeneratorSideType.right)};
+    [SerializeField] GameLogic _gameLogic;
     [SerializeField] private Animator _anim;
 
     [SerializeField, Range(50, 100)] private int _timeBetween;
@@ -19,6 +18,8 @@ public class Character : MonoBehaviour
     {
         StartCoroutine(MovingNeck());
         StartCoroutine(MovingHead());
+
+        _gameLogic.Inizialize();
     }
 
     private void OnDisable()

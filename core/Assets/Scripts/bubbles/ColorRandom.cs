@@ -25,10 +25,10 @@ namespace Bubbles
         /// <summary>
         /// Get random color from list
         /// </summary>
-        public static ColorType GetRandomColor(ColorType[] colors)
+        public static ColorType GetRandomColor(ColorTypes[] colors)
         {
             var randomIndex = Random.Range(0, colors.Length);
-            return colors[randomIndex];
+            return colors[randomIndex].color;
         }
     }
 }

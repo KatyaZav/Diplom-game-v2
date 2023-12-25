@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 133819336}
   - component: {fileID: 133819338}
   - component: {fileID: 133819339}
+  - component: {fileID: 133819340}
   m_Layer: 5
   m_Name: character
   m_TagString: Untagged
@@ -311,6 +312,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c58fb2a66f5bf241bb73605f8fd8fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameLogic: {fileID: 133819340}
+  _anim: {fileID: 133819338}
+  _timeBetween: 60
+--- !u!114 &133819340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133819334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f996776715c7d2408475d91c72da348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _holder: {fileID: 1973980476}
   _generators:
   - name: Left
@@ -319,8 +335,6 @@ MonoBehaviour:
   - name: Right
     _eyeImage: {fileID: 80287048}
     _sideType: 1
-  _anim: {fileID: 133819338}
-  _timeBetween: 60
 --- !u!1 &198706540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,18 +1847,21 @@ MonoBehaviour:
     - name: Blue
       color: 4
       image: {fileID: -388355042, guid: db1d930c1c992d148884196014c80980, type: 3}
+    Probability: 5
   - name: Everything
     ChoseType: 1
     Colors:
     - name: Rainbow
       color: -1
       image: {fileID: -388355042, guid: db1d930c1c992d148884196014c80980, type: 3}
+    Probability: 2
   - name: Null
     ChoseType: 2
     Colors:
     - name: Closed
       color: 0
       image: {fileID: 579065232, guid: db1d930c1c992d148884196014c80980, type: 3}
+    Probability: 2
   - name: Simple
     ChoseType: 3
     Colors:
@@ -1857,6 +1874,7 @@ MonoBehaviour:
     - name: Blue
       color: 4
       image: {fileID: -388355042, guid: db1d930c1c992d148884196014c80980, type: 3}
+    Probability: 8
   BublesTypes:
   - name: Pink
     color: 1

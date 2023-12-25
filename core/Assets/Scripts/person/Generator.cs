@@ -12,7 +12,7 @@ public class Generator
     [SerializeField] private GeneratorSideType _sideType;
 
     private ColorType[] _colorTypeChoosed;
-    private IChooseble _generateMethod;
+    public IChooseble _generateMethod;
 
     public IChooseble GenerateMethon
     {
@@ -46,35 +46,38 @@ public class Generator
     /// <summary>
     /// change generation color method
     /// </summary>
-    public void ChangeGenerateMethon(MethondProbability[] methonds)
+    public void ChangeGenerateMethon(BublesTypes[] methonds)
     {
         var probability = 0;
 
         foreach (var methond in methonds)
         {
-            probability += methond.probability;
+            probability += methond.Probability;
         }
 
         var ans = Random.Range(0, probability);
 
         foreach (var methond in methonds)
         {
-            ans -= methond.probability;
+            ans -= methond.Probability;
             if (ans <= 0)
             {
-                GenerateMethon = methond.method;
+                GenerateMethon = ColorsHolder.DictionaryMethods[methond.ChoseType];
                 return;
             }
         }
 
         throw new System.Exception("Something vent wrong");
     }
-}
 
-public class MethondProbability
-{
-    public IChooseble method;
-    public int probability;
+    /// <summary>
+    /// Generate colors answer 
+    /// </summary>
+    public void GenerateColor(ColorTypes[] colors)
+    {
+        _colorTypeChoosed = _generateMethod.GenerateAnswer(colors);
+        Debug.Log("Invoke change color");
+    }
 }
 
 

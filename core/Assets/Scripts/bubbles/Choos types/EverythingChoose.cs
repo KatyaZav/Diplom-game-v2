@@ -11,9 +11,16 @@ namespace Bubbles
             throw new System.NotImplementedException();
         }
 
-        public ColorType[] GenerateAnswer(ColorType[] colors)
+        public ColorType[] GenerateAnswer(ColorTypes[] colors)
         {
-            return colors;
+            List<ColorType> ans = new List<ColorType>();
+
+            foreach(var color in colors)
+            {
+                ans.Add(color.color);
+            }
+
+            return ans.ToArray();
         }
     }
 }

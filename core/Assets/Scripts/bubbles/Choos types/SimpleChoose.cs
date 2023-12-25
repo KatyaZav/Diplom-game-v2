@@ -12,7 +12,7 @@ namespace Bubbles
             throw new System.NotImplementedException();
         }
 
-        public ColorType[] GenerateAnswer(ColorType[] colors)
+        public ColorType[] GenerateAnswer(ColorTypes[] colors)
         {
             return new ColorType[] { BubbleColorRandom.GetRandomColor(colors) };
         }

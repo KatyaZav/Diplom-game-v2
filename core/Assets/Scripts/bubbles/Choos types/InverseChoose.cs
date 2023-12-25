@@ -12,14 +12,20 @@ namespace Bubbles
             throw new System.NotImplementedException();
         }
 
-        public ColorType[] GenerateAnswer(ColorType[] colors)
+        public ColorType[] GenerateAnswer(ColorTypes[] colors)
         {
-            var colorsAns = colors.ToList();
-            var color = BubbleColorRandom.GetRandomColor(colors);
+            List<ColorType> ans = new List<ColorType>();
+
+            foreach (var color in colors)
+            {
+                ans.Add(color.color);
+            }
+
+            var removedColor = BubbleColorRandom.GetRandomColor(colors);
         
-            colorsAns.Remove(color);
+            ans.Remove(removedColor);
                 
-            return colorsAns.ToArray();
+            return ans.ToArray();
         }
     }
 }
