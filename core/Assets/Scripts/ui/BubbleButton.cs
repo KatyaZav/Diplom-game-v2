@@ -8,12 +8,12 @@ namespace Bubbles
     public class BubbleButton : MonoBehaviour
     {
         [SerializeField] private Image _image;
-        private ColorTypes _color;
+        private ColorTypes _colorType;
 
         public void ChangeColor(ColorTypes color)
         {
-            _color = color;
-            _image.sprite = _color.image;
+            _colorType = color;
+            _image.sprite = _colorType.image;
         }
     }
 }

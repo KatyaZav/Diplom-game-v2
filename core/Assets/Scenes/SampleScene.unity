@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 80287047}
   - component: {fileID: 80287049}
   - component: {fileID: 80287048}
+  - component: {fileID: 80287050}
   m_Layer: 5
   m_Name: right eye
   m_TagString: Untagged
@@ -199,6 +200,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80287046}
   m_CullTransparentMesh: 1
+--- !u!114 &80287050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80287046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb8eb014e8f02d04a80d5368e086625b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 80287048}
+  _slideType: 1
 --- !u!1 &133819334
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,11 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c58fb2a66f5bf241bb73605f8fd8fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameLogic: {fileID: 133819340}
   _anim: {fileID: 133819338}
-  palets:
-  - {fileID: 275837118}
-  - {fileID: 1532757916}
   _timeBetween: 60
 --- !u!114 &133819340
 MonoBehaviour:
@@ -844,6 +855,7 @@ GameObject:
   - component: {fileID: 594648586}
   - component: {fileID: 594648588}
   - component: {fileID: 594648587}
+  - component: {fileID: 594648589}
   m_Layer: 5
   m_Name: left eye
   m_TagString: Untagged
@@ -909,6 +921,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594648585}
   m_CullTransparentMesh: 1
+--- !u!114 &594648589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594648585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb8eb014e8f02d04a80d5368e086625b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 594648587}
+  _slideType: 0
 --- !u!1 &685227238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,6 +1362,7 @@ GameObject:
   - component: {fileID: 1315415853}
   - component: {fileID: 1315415852}
   - component: {fileID: 1315415851}
+  - component: {fileID: 1315415855}
   m_Layer: 5
   m_Name: PopupGame
   m_TagString: Untagged
@@ -1430,6 +1457,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1315415855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315415850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 382d26a1eea663f44b53fc3570b7ff8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameLogic: {fileID: 133819340}
+  _palets:
+  - {fileID: 275837118}
+  - {fileID: 1532757916}
+  _eyeUI:
+  - {fileID: 594648589}
+  - {fileID: 80287050}
+  _character: {fileID: 133819339}
 --- !u!1 &1532757911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,20 +1968,20 @@ MonoBehaviour:
     Colors:
     - name: pink
       color: 1
-      image: {fileID: 171471680, guid: db1d930c1c992d148884196014c80980, type: 3}
+      image: {fileID: 5330431, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
     - name: green
       color: 2
-      image: {fileID: 335261051, guid: db1d930c1c992d148884196014c80980, type: 3}
+      image: {fileID: 42032962, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
     - name: blue
       color: 4
-      image: {fileID: -388355042, guid: db1d930c1c992d148884196014c80980, type: 3}
+      image: {fileID: 2088912385, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
     Probability: 2
   - name: Everything
     ChoseType: 1
     Colors:
     - name: rainbow
       color: -1
-      image: {fileID: 0}
+      image: {fileID: -1153625173, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
     Probability: 1
   - name: Null
     ChoseType: 2
@@ -1966,6 +2013,10 @@ MonoBehaviour:
   - name: Blue
     color: 4
     image: {fileID: -460812516, guid: e1c16784cc4e2b64792a0805b0dbb18d, type: 3}
+  _zeroBubble:
+    name: error
+    color: 0
+    image: {fileID: 21300000, guid: e97a5c29c2603444fa3a588e9e3bd5ad, type: 3}
 --- !u!1 &2059741824
 GameObject:
   m_ObjectHideFlags: 0

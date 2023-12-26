@@ -18,9 +18,11 @@ namespace Bubbles
 
         [SerializeField] private BublesTypes[] _eyesAnswerTypes;
         [SerializeField] private ColorTypes[] _bublesTypes;
+        [SerializeField] private ColorTypes _zeroBubble;
 
         public BublesTypes[] EyesAnswerTypes { get => _eyesAnswerTypes; }
         public ColorTypes[] BublesTypes { get => _bublesTypes; }
+        public ColorTypes ZeroBubble { get => _zeroBubble; }
 
         private void Awake()
         {

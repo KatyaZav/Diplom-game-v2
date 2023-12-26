@@ -4,5 +4,6 @@ namespace Bubbles
     {
         ColorTypes[] GenerateAnswer(ColorTypes[] colors);
         void Chosed();
+        ChosesType Type { get; } 
     }
 }

@@ -6,6 +6,7 @@ namespace Bubbles
 {
     public class NullChoose : IChooseble
     {
+        public ChosesType Type { get => ChosesType.NullChoose; }
         public void Chosed()
         {
             throw new System.NotImplementedException();
@@ -13,7 +14,7 @@ namespace Bubbles
 
         public ColorTypes[] GenerateAnswer(ColorTypes[] colors)
         {
-            return null;
+            return new ColorTypes[] { ColorsHolder.Instance.ZeroBubble };
         }
     }
 }

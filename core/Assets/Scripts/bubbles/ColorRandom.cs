@@ -27,14 +27,17 @@ namespace Bubbles
         /// </summary>
         public static ColorTypes GetRandomColor(ColorTypes[] colors)
         {
-            if (colors != null)
+            if (colors != new ColorTypes[] { ColorsHolder.Instance.ZeroBubble })
             {
                 var randomIndex = Random.Range(0, colors.Length);
                 return colors[randomIndex];
             }
-
-            Debug.LogError("Null error");
-            return null;
+            else
+            {
+                colors = ColorsHolder.Instance.BublesTypes;
+                var randomIndex = Random.Range(0, colors.Length);
+                return colors[randomIndex];
+            }
         }
     }
 }

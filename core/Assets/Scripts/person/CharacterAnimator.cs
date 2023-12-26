@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public class CharacterAnimator : MonoBehaviour
 {
-    [SerializeField] GameLogic _gameLogic;
     [SerializeField] private Animator _anim;
-    [SerializeField] private Bubbles.BubblePalette[] palets; 
-
-
+    
     [SerializeField, Range(50, 100)] private int _timeBetween;
 
     private void OnValidate()
@@ -16,15 +13,10 @@ public class Character : MonoBehaviour
         _anim = GetComponent<Animator>();
     }
 
-    private void OnEnable()
+    public void Inizialize()
     {
         StartCoroutine(MovingNeck());
-        StartCoroutine(MovingHead());
-
-        foreach (var pallet in palets)
-            pallet.Inizialize();
-
-        _gameLogic.Inizialize();
+        StartCoroutine(MovingHead());        
     }
 
     private void OnDisable()

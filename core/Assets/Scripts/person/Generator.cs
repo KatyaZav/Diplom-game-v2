@@ -8,7 +8,7 @@ using System;
 [System.Serializable]
 public class Generator
 {
-    public static Action<GeneratorSideType, ColorTypes[]> ChangedTask;
+    public static Action<GeneratorSideType, ColorTypes[], IChooseble> ChangedTask;
 
     [SerializeField] private string name;
     [SerializeField] private Image _eyeImage;
@@ -82,7 +82,7 @@ public class Generator
     {
         _colorTypeChoosed = _generateMethod.GenerateAnswer(colors);
 
-        ChangedTask?.Invoke(_sideType, _colorTypeChoosed);
+        ChangedTask?.Invoke(_sideType, _colorTypeChoosed, _generateMethod);
     }
 }
 

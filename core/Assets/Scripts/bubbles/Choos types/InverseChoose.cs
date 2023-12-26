@@ -7,6 +7,7 @@ namespace Bubbles
 {
     public class InverseChoose : IChooseble
     {
+        public ChosesType Type { get => ChosesType.InverseChoose; }
         public void Chosed()
         {
             throw new System.NotImplementedException();

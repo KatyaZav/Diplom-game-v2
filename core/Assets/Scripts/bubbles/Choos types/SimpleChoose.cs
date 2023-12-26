@@ -7,6 +7,8 @@ namespace Bubbles
 {
     public class SimpleChoose : IChooseble
     {
+        public ChosesType Type { get => ChosesType.SimpleChoose; }
+
         public void Chosed()
         {
             throw new System.NotImplementedException();

@@ -21,7 +21,7 @@ namespace Bubbles
             Generator.ChangedTask -= CheckSlideType;            
         }
 
-        private void CheckSlideType(GeneratorSideType type, ColorTypes[] ans)
+        private void CheckSlideType(GeneratorSideType type, ColorTypes[] ans, IChooseble u)
         {
             if (_type == type)
             {
