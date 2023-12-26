@@ -1974,16 +1974,16 @@ MonoBehaviour:
   - name: Inverse
     ChoseType: 0
     Colors:
-    - name: pink
+    - name: InversePink
       color: 1
       image: {fileID: 5330431, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
-    - name: green
+    - name: InverseGreen
       color: 2
       image: {fileID: 42032962, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
-    - name: blue
+    - name: InverseBlue
       color: 4
       image: {fileID: 2088912385, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
-    Probability: 1
+    Probability: 0
   - name: Everything
     ChoseType: 1
     Colors:
@@ -1997,7 +1997,7 @@ MonoBehaviour:
     - name: Closed
       color: 0
       image: {fileID: 579065232, guid: db1d930c1c992d148884196014c80980, type: 3}
-    Probability: 1
+    Probability: 0
   - name: Simple
     ChoseType: 3
     Colors:
@@ -2010,7 +2010,7 @@ MonoBehaviour:
     - name: Blue
       color: 4
       image: {fileID: -388355042, guid: db1d930c1c992d148884196014c80980, type: 3}
-    Probability: 1
+    Probability: 0
   _bublesTypes:
   - name: Pink
     color: 1

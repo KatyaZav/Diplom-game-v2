@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Bubbles;
 using System;
+using System.Linq;
 
 [System.Serializable]
 public class Generator
@@ -54,15 +55,18 @@ public class Generator
     public void ChangeGenerateMethon(BublesTypes[] methonds)
     {
         var probability = 0;
+        var anslist = methonds.ToList();
 
         foreach (var methond in methonds)
         {
             probability += methond.Probability;
+            if (methond.Probability == 0)
+                anslist.Remove(methond);
         }
 
         var ans = UnityEngine.Random.Range(0, probability);
 
-        foreach (var methond in methonds)
+        foreach (var methond in anslist)
         {
             ans -= methond.Probability;
             if (ans <= 0)
