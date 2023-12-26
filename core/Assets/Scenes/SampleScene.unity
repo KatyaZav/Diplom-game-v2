@@ -515,6 +515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: buble (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 147420029098944422, guid: a88e50180dd26794e87cde414cc03a84, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 147420029098944423, guid: a88e50180dd26794e87cde414cc03a84, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -598,6 +602,10 @@ PrefabInstance:
     - target: {fileID: 147420029098944423, guid: a88e50180dd26794e87cde414cc03a84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 147420029821349798, guid: a88e50180dd26794e87cde414cc03a84, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 147420029821349799, guid: a88e50180dd26794e87cde414cc03a84, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1975,7 +1983,7 @@ MonoBehaviour:
     - name: blue
       color: 4
       image: {fileID: 2088912385, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
-    Probability: 2
+    Probability: 1
   - name: Everything
     ChoseType: 1
     Colors:
@@ -1989,7 +1997,7 @@ MonoBehaviour:
     - name: Closed
       color: 0
       image: {fileID: 579065232, guid: db1d930c1c992d148884196014c80980, type: 3}
-    Probability: 2
+    Probability: 1
   - name: Simple
     ChoseType: 3
     Colors:
@@ -2002,7 +2010,7 @@ MonoBehaviour:
     - name: Blue
       color: 4
       image: {fileID: -388355042, guid: db1d930c1c992d148884196014c80980, type: 3}
-    Probability: 5
+    Probability: 1
   _bublesTypes:
   - name: Pink
     color: 1

@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace Bubbles
 {
-
     public class BubblePalette : MonoBehaviour
     {
         [SerializeField] private GeneratorSideType _type;
@@ -14,12 +13,15 @@ namespace Bubbles
         public void Inizialize()
         {
             Generator.ChangedTask += CheckSlideType;
+
+            foreach (var button in _buttons)
+                button.Type = _type;
         }
 
         private void OnDisable()
         {
-            Generator.ChangedTask -= CheckSlideType;            
-        }
+            Generator.ChangedTask -= CheckSlideType;
+        }               
 
         private void CheckSlideType(GeneratorSideType type, ColorTypes[] ans, IChooseble u)
         {

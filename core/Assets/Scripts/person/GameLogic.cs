@@ -18,9 +18,21 @@ public class GameLogic : MonoBehaviour
     {
         ChangeTask(_generators[0]);
         ChangeTask(_generators[1]);
+
+        BubbleButton.BubbleClicked += OnButtonClick;
     }
 
-    void ChangeTask(Generator generator)
+    private void OnDisable()
+    {
+        BubbleButton.BubbleClicked -= OnButtonClick;
+    }
+
+    private void OnButtonClick(GeneratorSideType type, ColorTypes color)
+    {
+        Debug.Log(_generators[(int)type].CheckAnswer(color));
+    }
+
+    private void ChangeTask(Generator generator)
     {
         generator.ChangeGenerateMethon(ColorsHolder.Instance.EyesAnswerTypes);
         generator.GenerateColor(ColorsHolder.Instance.BublesTypes);

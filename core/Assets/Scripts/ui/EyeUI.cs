@@ -25,6 +25,9 @@ public class EyeUI : MonoBehaviour
         if (_slideType == type)
         {
             var colorType = color[0].color;
+
+            Debug.Log("eye" + method.Type.ToString() + " " + type);
+
             //var ansMethod = ColorsHolder.DictionaryMethods[method.Type];
 
             foreach (var y in ColorsHolder.Instance.EyesAnswerTypes)
@@ -36,7 +39,10 @@ public class EyeUI : MonoBehaviour
                     foreach (var col in y.Colors)
                     {
                         if (col.color == colorType)
+                        {
                             _image.sprite = col.image;
+                            return;
+                        }
                     }
                 }
             }

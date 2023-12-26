@@ -41,7 +41,7 @@ public class Generator
     {
         foreach (var color in _colorTypeChoosed)
         {
-            if (color == colorAnswer)
+            if (color != ColorsHolder.Instance.ZeroBubble && color == colorAnswer)
                 return true;
         }
 
