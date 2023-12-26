@@ -6,6 +6,8 @@ namespace Bubbles
 {
     public class ColorsHolder : MonoBehaviour
     {
+        public static ColorsHolder Instance;
+
         public static Dictionary<ChosesType, IChooseble> DictionaryMethods = new Dictionary<ChosesType, IChooseble>()
         {
             {ChosesType.InverseChoose, new InverseChoose()},
@@ -14,8 +16,16 @@ namespace Bubbles
             {ChosesType.SimpleChoose, new SimpleChoose()},
         };
 
-        public BublesTypes[] EyesAnswerTypes;
-        public ColorTypes[] BublesTypes;
+        [SerializeField] private BublesTypes[] _eyesAnswerTypes;
+        [SerializeField] private ColorTypes[] _bublesTypes;
+
+        public BublesTypes[] EyesAnswerTypes { get => _eyesAnswerTypes; }
+        public ColorTypes[] BublesTypes { get => _bublesTypes; }
+
+        private void Awake()
+        {
+            Instance ??= this;
+        }
     }
 
     [System.Serializable]

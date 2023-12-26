@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 147420029098944423}
   - component: {fileID: 147420029098944441}
   - component: {fileID: 147420029098944440}
+  - component: {fileID: 3517087938151436221}
   m_Layer: 5
   m_Name: buble (2)
   m_TagString: Untagged
@@ -77,6 +78,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3517087938151436221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147420029098944422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b201364b540652b42a35a447addf24f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 147420029821349816}
 --- !u!1 &147420029821349798
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -805714752, guid: e1c16784cc4e2b64792a0805b0dbb18d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e97a5c29c2603444fa3a588e9e3bd5ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

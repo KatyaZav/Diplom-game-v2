@@ -12,14 +12,9 @@ namespace Bubbles
             throw new System.NotImplementedException();
         }
 
-        public ColorType[] GenerateAnswer(ColorTypes[] colors)
+        public ColorTypes[] GenerateAnswer(ColorTypes[] colors)
         {
-            List<ColorType> ans = new List<ColorType>();
-
-            foreach (var color in colors)
-            {
-                ans.Add(color.color);
-            }
+            var ans = colors.ToList();
 
             var removedColor = BubbleColorRandom.GetRandomColor(colors);
         

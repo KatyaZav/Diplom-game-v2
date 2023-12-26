@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Bubbles;
+using System;
 
 [System.Serializable]
 public class Generator
 {
+    public static Action<GeneratorSideType, ColorTypes[]> ChangedTask;
+
     [SerializeField] private string name;
     [SerializeField] private Image _eyeImage;
     [SerializeField] private GeneratorSideType _sideType;
 
-    private ColorType[] _colorTypeChoosed;
-    public IChooseble _generateMethod;
+    private ColorTypes[] _colorTypeChoosed;
+    private IChooseble _generateMethod;
+
+    public GeneratorSideType SideType { get => _sideType; }
 
     public IChooseble GenerateMethon
     {
@@ -24,7 +29,7 @@ public class Generator
     {
         name = type.ToString();
         _sideType = type;
-        _colorTypeChoosed = new ColorType[] { ColorType.blue };
+        _colorTypeChoosed = null;
         _generateMethod = new SimpleChoose();
     }
 
@@ -32,7 +37,7 @@ public class Generator
     /// <summary>
     /// Check color answer with generator
     /// </summary>
-    public bool CheckAnswer(ColorType colorAnswer)
+    public bool CheckAnswer(ColorTypes colorAnswer)
     {
         foreach (var color in _colorTypeChoosed)
         {
@@ -55,7 +60,7 @@ public class Generator
             probability += methond.Probability;
         }
 
-        var ans = Random.Range(0, probability);
+        var ans = UnityEngine.Random.Range(0, probability);
 
         foreach (var methond in methonds)
         {
@@ -76,7 +81,8 @@ public class Generator
     public void GenerateColor(ColorTypes[] colors)
     {
         _colorTypeChoosed = _generateMethod.GenerateAnswer(colors);
-        Debug.Log("Invoke change color");
+
+        ChangedTask?.Invoke(_sideType, _colorTypeChoosed);
     }
 }
 

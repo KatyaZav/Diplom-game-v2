@@ -11,7 +11,7 @@ namespace Bubbles
             throw new System.NotImplementedException();
         }
 
-        public ColorType[] GenerateAnswer(ColorTypes[] colors)
+        public ColorTypes[] GenerateAnswer(ColorTypes[] colors)
         {
             return null;
         }

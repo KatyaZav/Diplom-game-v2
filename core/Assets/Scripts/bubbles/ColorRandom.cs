@@ -25,10 +25,16 @@ namespace Bubbles
         /// <summary>
         /// Get random color from list
         /// </summary>
-        public static ColorType GetRandomColor(ColorTypes[] colors)
+        public static ColorTypes GetRandomColor(ColorTypes[] colors)
         {
-            var randomIndex = Random.Range(0, colors.Length);
-            return colors[randomIndex].color;
+            if (colors != null)
+            {
+                var randomIndex = Random.Range(0, colors.Length);
+                return colors[randomIndex];
+            }
+
+            Debug.LogError("Null error");
+            return null;
         }
     }
 }

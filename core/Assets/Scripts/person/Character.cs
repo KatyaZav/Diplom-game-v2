@@ -6,6 +6,8 @@ public class Character : MonoBehaviour
 {
     [SerializeField] GameLogic _gameLogic;
     [SerializeField] private Animator _anim;
+    [SerializeField] private Bubbles.BubblePalette[] palets; 
+
 
     [SerializeField, Range(50, 100)] private int _timeBetween;
 
@@ -18,6 +20,9 @@ public class Character : MonoBehaviour
     {
         StartCoroutine(MovingNeck());
         StartCoroutine(MovingHead());
+
+        foreach (var pallet in palets)
+            pallet.Inizialize();
 
         _gameLogic.Inizialize();
     }
