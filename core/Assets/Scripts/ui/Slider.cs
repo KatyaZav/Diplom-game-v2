@@ -10,7 +10,7 @@ public class Slider : MonoBehaviour
     private int _maxValue;
     private float _currentValue;
 
-    public void Inizialize(int maxValue)
+    public virtual void Inizialize(int maxValue)
     {
         _maxValue = maxValue;
         _currentValue = _maxValue;
@@ -20,18 +20,69 @@ public class Slider : MonoBehaviour
         StartCoroutine(TimerLogic());
     }
 
+    public void AddTime(float value) => StartCoroutine(AddingTime(value));
+    public void RemoveTime(float value) => StartCoroutine(RemovingTime(value));
+
+    public virtual void TimerOut()
+    {
+        Debug.LogWarning("died");
+    }
+
+    private IEnumerator AddingTime(float value)
+    {
+        //Debug.Log("Add time");
+        while (value > 0)
+        {
+            if (_currentValue >= _maxValue)
+            {
+                yield return new WaitForEndOfFrame();
+                continue;
+            }
+
+            value -= speed * 2;
+            _currentValue += speed*2;
+            
+            gameObject.transform.localScale += new Vector3(speed * 2 / _maxValue, 0, 0);
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    private IEnumerator RemovingTime(float value)
+    {
+        //Debug.Log("Remove time");
+        while (value > 0)
+        {
+            if (_currentValue <= 0)
+            {
+                TimerOut();
+                StopAllCoroutines();
+                break;
+            }
+
+            value -= speed;
+            _currentValue -= speed;
+
+            gameObject.transform.localScale -= new Vector3(speed / _maxValue, 0, 0);
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
     private IEnumerator TimerLogic()
     {
         while (_currentValue > 0)
-        {
+        {                        
+            if (_currentValue <= 0)
+                break;
+
             _currentValue -= speed;
-            //Debug.Log(gameObject.transform.localScale);
             gameObject.transform.localScale -= new Vector3(speed/_maxValue, 0, 0);
+
+
             yield return new WaitForEndOfFrame();
         }
 
-        Debug.Log("died");
-    }
+        TimerOut();
+    }    
 
     private void OnDisable()
     {

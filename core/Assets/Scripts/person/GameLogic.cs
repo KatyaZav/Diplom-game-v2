@@ -6,6 +6,7 @@ using Bubbles;
 
 public class GameLogic : MonoBehaviour
 { 
+    public static Action<bool> ClickedButton;
 
     //[SerializeField] Bubbles.ColorsHolder _holder;
     [SerializeField] private List<Generator> _generators = 
@@ -29,7 +30,7 @@ public class GameLogic : MonoBehaviour
 
     private void OnButtonClick(GeneratorSideType type, ColorTypes color)
     {
-        Debug.Log(_generators[(int)type].CheckAnswer(color));
+        ClickedButton?.Invoke(_generators[(int)type].CheckAnswer(color));
     }
 
     private void ChangeTask(Generator generator)
