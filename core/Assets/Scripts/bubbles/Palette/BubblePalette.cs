@@ -31,7 +31,7 @@ namespace Bubbles
 
                 for (var i=0; i<_buttons.Length; i++)
                 {
-                    if (i == correctAns)
+                    if (i == correctAns && u.Type != ChosesType.NullChoose)
                     {
                         ButtonActivate(_buttons[i],ChooseColor(ans));
                     }

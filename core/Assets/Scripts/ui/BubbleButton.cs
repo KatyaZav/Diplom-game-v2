@@ -19,12 +19,19 @@ namespace Bubbles
 
         public void ChangeColor(ColorTypes color)
         {
+            _image.enabled = true;
+            button.enabled = true;
+
             _colorType = color;
             _image.sprite = _colorType.image;
         }
 
         public void OnButtonClick()
         {
+            _image.enabled = false;
+            button.enabled = false;
+
+            Instantiate(_colorType.goodEffect, transform.position, Quaternion.identity);
             BubbleClicked?.Invoke(Type, _colorType);
         }
 

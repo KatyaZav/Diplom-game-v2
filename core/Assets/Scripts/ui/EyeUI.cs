@@ -37,11 +37,11 @@ public class EyeUI : MonoBehaviour
             {
                 if (y.ChoseType == method.Type)
                 {
-                    Debug.Log(method.Type.ToString() + " " + _slideType);
+                    //Debug.Log(method.Type.ToString() + " " + _slideType);
 
                     foreach (var col in y.Colors)
                     {
-                        Debug.Log(col.color.ToString());
+                        //Debug.Log(col.color.ToString());
 
                         if (col.color.HasFlag(colorType))
                         {

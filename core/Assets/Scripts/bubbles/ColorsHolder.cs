@@ -45,6 +45,8 @@ namespace Bubbles
         public string name;
         public ColorType color;
         public Sprite image;
+
+        public GameObject goodEffect;
     }
 }
 
