@@ -9,6 +9,8 @@ public class MinigameBostrap : MonoBehaviour
     [SerializeField] private EyeUI[] _eyeUI;
     [SerializeField] private CharacterAnimator _character;
     [SerializeField] private Slider _slider;
+    [SerializeField] private Points _points;
+
 
 
     private void OnEnable()
@@ -23,9 +25,10 @@ public class MinigameBostrap : MonoBehaviour
         foreach (var eye in _eyeUI)
             eye.Inizialize();
 
-        _slider.Inizialize(100);
-
         _gameLogic.Inizialize();
+        _points.Inizialize(0);
+
+        _slider.Inizialize(100);
     }
 
     private void GameEnd()
