@@ -1983,14 +1983,14 @@ MonoBehaviour:
     - name: InverseBlue
       color: 3
       image: {fileID: 2088912385, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
-    Probability: 0
+    Probability: 1
   - name: Everything
     ChoseType: 1
     Colors:
     - name: rainbow
       color: -1
       image: {fileID: -1153625173, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
-    Probability: 1
+    Probability: 0
   - name: Null
     ChoseType: 2
     Colors:

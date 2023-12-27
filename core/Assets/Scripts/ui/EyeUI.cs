@@ -42,7 +42,8 @@ public class EyeUI : MonoBehaviour
                     foreach (var col in y.Colors)
                     {
                         Debug.Log(col.color.ToString());
-                        if (col.color == colorType)//col.color.HasFlag(colorType))
+
+                        if (col.color.HasFlag(colorType))
                         {
                             _image.sprite = col.image;
                             return;
