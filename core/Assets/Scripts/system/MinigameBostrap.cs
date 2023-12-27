@@ -8,6 +8,7 @@ public class MinigameBostrap : MonoBehaviour
     [SerializeField] private Bubbles.BubblePalette[] _palets;
     [SerializeField] private EyeUI[] _eyeUI;
     [SerializeField] private CharacterAnimator _character;
+    [SerializeField] private Slider _slider;
 
 
     private void OnEnable()
@@ -19,6 +20,8 @@ public class MinigameBostrap : MonoBehaviour
 
         foreach (var eye in _eyeUI)
             eye.Inizialize();
+
+        _slider.Inizialize(100);
 
         _gameLogic.Inizialize();
     }
