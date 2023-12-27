@@ -9,19 +9,28 @@ public class Points : MonoBehaviour
     [SerializeField] private GameObject[] goodText;
     [SerializeField] private GameObject[] badText;
 
+    private List<GameObject> objects;
+
     private int points;
 
     public void Inizialize(int count)
     {
         points = count;
         _pointsText.text = count.ToString();
+        objects = new List<GameObject>();
 
         GameLogic.ClickedButton += OnButtonClick;
     }
 
     private void OnDisable()
     {
-        GameLogic.ClickedButton -= OnButtonClick;        
+        GameLogic.ClickedButton -= OnButtonClick;    
+        
+        foreach(var ob in objects)
+        {
+            if (ob != null)
+                Destroy(ob);
+        }
     }
 
     private void OnButtonClick(bool isGood)
@@ -31,10 +40,16 @@ public class Points : MonoBehaviour
             points++;
             _pointsText.text = points.ToString();
 
-            Destroy(Instantiate(GetRandomText(goodText), transform), 2);
+            var e = Instantiate(GetRandomText(goodText), transform);
+            objects.Add(e);
+            Destroy(e, 2);
         }
         else
-            Destroy(Instantiate(GetRandomText(badText), transform), 2);
+        {
+            var e = Instantiate(GetRandomText(badText), transform);
+            objects.Add(e);
+            Destroy(e, 2);
+        }
     }
 
     private GameObject GetRandomText(GameObject[] obj)
