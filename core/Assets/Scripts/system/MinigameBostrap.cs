@@ -13,6 +13,8 @@ public class MinigameBostrap : MonoBehaviour
 
     private void OnEnable()
     {
+        Slider.GameEnded += GameEnd;
+
         _character.Inizialize();
 
         foreach (var pallet in _palets)
@@ -24,5 +26,10 @@ public class MinigameBostrap : MonoBehaviour
         _slider.Inizialize(100);
 
         _gameLogic.Inizialize();
+    }
+
+    private void GameEnd()
+    {
+        gameObject.SetActive(false);
     }
 }

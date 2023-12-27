@@ -15,12 +15,32 @@ public class GameLogic : MonoBehaviour
         new Generator(GeneratorSideType.left), new Generator(GeneratorSideType.right)
     };
 
+    private int _timeBetweenSpawn = 5;
+
     public void Inizialize()
     {
-        ChangeTask(_generators[0]);
-        ChangeTask(_generators[1]);
+        //ChangeTask(_generators[1]);
 
         BubbleButton.BubbleClicked += OnButtonClick;
+
+        StartCoroutine(ChangeTaskByTime(GeneratorSideType.right));
+        StartCoroutine(ChangeTaskByTime(GeneratorSideType.left));
+
+    }
+
+    private IEnumerator ChangeTaskByTime(GeneratorSideType type)
+    {
+        while (true)
+        {
+            Debug.Log("Set anim and change");
+            
+            yield return new WaitForSeconds(1);
+            
+            ChangeTask(_generators[(int)type]);
+
+            yield return new WaitForSeconds(_timeBetweenSpawn - 1);           
+
+        }
     }
 
     private void OnDisable()
@@ -31,6 +51,9 @@ public class GameLogic : MonoBehaviour
     private void OnButtonClick(GeneratorSideType type, ColorTypes color)
     {
         ClickedButton?.Invoke(_generators[(int)type].CheckAnswer(color));
+
+        StopCoroutine(ChangeTaskByTime(type));
+        StartCoroutine(ChangeTaskByTime(type));
     }
 
     private void ChangeTask(Generator generator)

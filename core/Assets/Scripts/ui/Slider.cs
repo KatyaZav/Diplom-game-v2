@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,10 @@ using UnityEngine.UI;
 
 public class Slider : MonoBehaviour
 {
+    public static Action GameEnded;
+
     [SerializeField] private float speed = 0.05f;
-    
+        
     private int _maxValue;
     private float _currentValue;
 
@@ -26,6 +29,7 @@ public class Slider : MonoBehaviour
     public virtual void TimerOut()
     {
         Debug.LogWarning("died");
+        GameEnded?.Invoke();
     }
 
     private IEnumerator AddingTime(float value)
