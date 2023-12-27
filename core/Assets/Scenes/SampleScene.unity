@@ -182,7 +182,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 579065232, guid: db1d930c1c992d148884196014c80980, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e97a5c29c2603444fa3a588e9e3bd5ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -911,7 +911,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 579065232, guid: db1d930c1c992d148884196014c80980, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e97a5c29c2603444fa3a588e9e3bd5ad, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1975,13 +1975,13 @@ MonoBehaviour:
     ChoseType: 0
     Colors:
     - name: InversePink
-      color: 1
+      color: 6
       image: {fileID: 5330431, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
     - name: InverseGreen
-      color: 2
+      color: 5
       image: {fileID: 42032962, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
     - name: InverseBlue
-      color: 4
+      color: 3
       image: {fileID: 2088912385, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
     Probability: 0
   - name: Everything

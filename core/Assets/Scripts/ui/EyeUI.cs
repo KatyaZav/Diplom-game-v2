@@ -24,9 +24,12 @@ public class EyeUI : MonoBehaviour
     {
         if (_slideType == type)
         {
-            var colorType = color[0].color;
+            ColorType colorType = 0; 
 
-            Debug.Log("eye" + method.Type.ToString() + " " + type);
+            foreach (var col in color)
+            {
+                colorType += ((byte)col.color);
+            }
 
             //var ansMethod = ColorsHolder.DictionaryMethods[method.Type];
 
@@ -34,18 +37,22 @@ public class EyeUI : MonoBehaviour
             {
                 if (y.ChoseType == method.Type)
                 {
-                    Debug.Log(method.Type.ToString() + " " + _slideType + " " + y.Colors[0].name);
+                    Debug.Log(method.Type.ToString() + " " + _slideType);
 
                     foreach (var col in y.Colors)
                     {
-                        if (col.color == colorType)
+                        Debug.Log(col.color.ToString());
+                        if (col.color == colorType)//col.color.HasFlag(colorType))
                         {
                             _image.sprite = col.image;
                             return;
                         }
                     }
+                    break;
                 }
             }
+
+            Debug.LogError("Didn't found chose type");
         }
     }
 
