@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 147420029098944440}
   - component: {fileID: 3517087938151436221}
   - component: {fileID: 5407981723340823830}
+  - component: {fileID: 6895598501479826794}
   m_Layer: 5
   m_Name: buble (2)
   m_TagString: Untagged
@@ -91,6 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b201364b540652b42a35a447addf24f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Type: 0
+  button: {fileID: 5407981723340823830}
   _image: {fileID: 147420029821349816}
 --- !u!114 &5407981723340823830
 MonoBehaviour:
@@ -148,6 +151,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &6895598501479826794
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147420029098944422}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c4f33ee8aabe66a409e6bd6be83cf984, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &147420029821349798
 GameObject:
   m_ObjectHideFlags: 0

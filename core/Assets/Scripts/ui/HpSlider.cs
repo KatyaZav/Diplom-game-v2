@@ -8,19 +8,36 @@ public class HpSlider : Slider
     public override void Inizialize(int maxValue) 
     {
         GameLogic.ClickedButton += OnClick;
+        GameLogic.ChangeColorAnimation += Pause;
 
         base.Inizialize(maxValue);
     }
 
+    public void Pause(bool pause, GeneratorSideType type)
+    {
+        StopCoroutine(TimerLogic());
+        //Debug.Log(pause);
+
+        if (pause)
+        {
+            StopCoroutine(TimerLogic());
+        }
+        else
+        {
+            StartCoroutine(TimerLogic());
+        }
+    }
+
     private void OnDisable()
     {
-        GameLogic.ClickedButton -= OnClick;        
+        GameLogic.ClickedButton -= OnClick;
+        GameLogic.ChangeColorAnimation -= Pause;
     }
 
     void OnClick(bool isGood)
     {
         if (isGood)
-            AddTime(_costOfMistake);
+            AddTime(_costOfMistake*3);
         else
             RemoveTime(_costOfMistake);
     }

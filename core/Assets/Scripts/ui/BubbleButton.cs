@@ -14,8 +14,21 @@ namespace Bubbles
         public Button button;
 
         [SerializeField] private Image _image;
+        [SerializeField] private Animator _anim;
         private ColorTypes _colorType;
+
         public ColorTypes ColorType { get => _colorType; }
+
+        public void ActivateButton(bool isPauseEnable)
+        {
+            button.enabled = !isPauseEnable;
+            //_image.enabled = isPauseEnable;
+
+            if (isPauseEnable)
+                _anim.SetTrigger("off");
+            else
+                _anim.SetTrigger("on");
+        }
 
         public void ChangeColor(ColorTypes color)
         {
@@ -38,6 +51,7 @@ namespace Bubbles
         private void OnValidate()
         {
             button = GetComponent<Button>();
+            _anim = GetComponent<Animator>();
         }
     }
 }

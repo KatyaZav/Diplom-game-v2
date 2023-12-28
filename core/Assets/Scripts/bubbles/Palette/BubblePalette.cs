@@ -13,16 +13,30 @@ namespace Bubbles
         public void Inizialize()
         {
             Generator.ChangedTask += CheckSlideType;
+            GameLogic.ChangeColorAnimation += DisactivateButtons;
 
             foreach (var button in _buttons)
                 button.Type = _type;
         }
 
+
         private void OnDisable()
         {
             Generator.ChangedTask -= CheckSlideType;
+            GameLogic.ChangeColorAnimation -= DisactivateButtons;
         }               
 
+        private void DisactivateButtons(bool pause, GeneratorSideType type)
+        {
+            if (_type == type)
+            {
+                foreach (var button in _buttons)
+                {
+                    button.ActivateButton(pause);
+                }
+            }
+        }
+            
         private void CheckSlideType(GeneratorSideType type, ColorTypes[] ans, IChooseble u)
         {
             if (_type == type)

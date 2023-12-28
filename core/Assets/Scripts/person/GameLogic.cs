@@ -7,6 +7,7 @@ using Bubbles;
 public class GameLogic : MonoBehaviour
 { 
     public static Action<bool> ClickedButton;
+    public static Action<bool, GeneratorSideType> ChangeColorAnimation;
 
     //[SerializeField] Bubbles.ColorsHolder _holder;
     [SerializeField] private List<Generator> _generators = 
@@ -15,7 +16,7 @@ public class GameLogic : MonoBehaviour
         new Generator(GeneratorSideType.left), new Generator(GeneratorSideType.right)
     };
 
-    private int _timeBetweenSpawn = 5;
+    private int _timeBetweenSpawn = 10;
 
     public void Inizialize()
     {
@@ -33,9 +34,11 @@ public class GameLogic : MonoBehaviour
         while (true)
         {
             Debug.Log("Set anim and change");
-            
+
+            ChangeColorAnimation?.Invoke(true, type);
             yield return new WaitForSeconds(1);
             
+            ChangeColorAnimation?.Invoke(false, type);
             ChangeTask(_generators[(int)type]);
 
             yield return new WaitForSeconds(_timeBetweenSpawn - 1);           

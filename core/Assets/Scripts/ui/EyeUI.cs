@@ -7,17 +7,31 @@ using Bubbles;
 
 public class EyeUI : MonoBehaviour
 {
-    [SerializeField] Image _image;
-    [SerializeField] GeneratorSideType _slideType;
+    [SerializeField] private Image _image;
+    [SerializeField] private GeneratorSideType _slideType;
+    [SerializeField] private Animator _anim;
 
     public void Inizialize()
     {
         Generator.ChangedTask += ChangeEye;
+        GameLogic.ChangeColorAnimation += DisactivateButtons;
     }
 
     private void OnDisable()
     {
         Generator.ChangedTask -= ChangeEye;
+        GameLogic.ChangeColorAnimation -= DisactivateButtons;
+    }
+
+    private void DisactivateButtons(bool pause, GeneratorSideType type)
+    {
+        if (_slideType != type)
+            return;
+
+        if (pause)
+            _anim.SetTrigger("off");
+        else
+            _anim.SetTrigger("on");
     }
 
     private void ChangeEye(GeneratorSideType type, ColorTypes[] color, IChooseble method)
@@ -60,5 +74,6 @@ public class EyeUI : MonoBehaviour
     private void OnValidate()
     {
         _image = GetComponent<Image>();
+        _anim = GetComponent<Animator>();
     }
 }
