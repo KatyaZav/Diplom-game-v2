@@ -28,7 +28,7 @@ public class MinigameBostrap : MonoBehaviour
         _gameLogic.Inizialize();
         _points.Inizialize(0);
 
-        _slider.Inizialize(100);
+        _slider.Inizialize(40);
     }
 
     private void GameEnd()

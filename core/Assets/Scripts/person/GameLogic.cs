@@ -18,14 +18,17 @@ public class GameLogic : MonoBehaviour
 
     private int _timeBetweenSpawn = 10;
 
+    private Coroutine gen1;
+    private Coroutine gen2;
+
     public void Inizialize()
     {
         //ChangeTask(_generators[1]);
 
         BubbleButton.BubbleClicked += OnButtonClick;
 
-        StartCoroutine(ChangeTaskByTime(GeneratorSideType.right));
-        StartCoroutine(ChangeTaskByTime(GeneratorSideType.left));
+        gen1 = StartCoroutine(ChangeTaskByTime(GeneratorSideType.right));
+        gen2 = StartCoroutine(ChangeTaskByTime(GeneratorSideType.left));
 
     }
 
@@ -33,13 +36,13 @@ public class GameLogic : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("Set anim and change");
+            //Debug.Log("Set anim and change");
 
             ChangeColorAnimation?.Invoke(true, type);
             yield return new WaitForSeconds(1);
             
-            ChangeColorAnimation?.Invoke(false, type);
             ChangeTask(_generators[(int)type]);
+            ChangeColorAnimation?.Invoke(false, type);
 
             yield return new WaitForSeconds(_timeBetweenSpawn - 1);           
 
@@ -53,10 +56,20 @@ public class GameLogic : MonoBehaviour
 
     private void OnButtonClick(GeneratorSideType type, ColorTypes color)
     {
+        //Debug.Log("button clicked");
         ClickedButton?.Invoke(_generators[(int)type].CheckAnswer(color));
 
-        StopCoroutine(ChangeTaskByTime(type));
-        StartCoroutine(ChangeTaskByTime(type));
+        if (type == GeneratorSideType.right)
+        {
+            StopCoroutine(gen1);
+            gen1 = StartCoroutine(ChangeTaskByTime(type));
+        }
+        else
+        {
+            StopCoroutine(gen2);
+            gen2 = StartCoroutine(ChangeTaskByTime(type));
+        }
+
     }
 
     private void ChangeTask(Generator generator)

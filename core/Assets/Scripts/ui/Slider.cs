@@ -9,6 +9,8 @@ public class Slider : MonoBehaviour
     public static Action GameEnded;
 
     [SerializeField] private float speed = 0.01f;
+
+    protected Coroutine _timer;
         
     private int _maxValue;
     private float _currentValue;
@@ -20,7 +22,7 @@ public class Slider : MonoBehaviour
 
         gameObject.transform.localScale = new Vector3(1, 1, 1);
 
-        //StartCoroutine(TimerLogic());
+        _timer = StartCoroutine(TimerLogic());
     }
 
     public void AddTime(float value) => StartCoroutine(AddingTime(value));
@@ -59,10 +61,10 @@ public class Slider : MonoBehaviour
                 continue;
             }
 
-            value -= speed * 5;
-            _currentValue += speed*5;
+            value -= speed * 6;
+            _currentValue += speed*6;
             
-            gameObject.transform.localScale += new Vector3(speed * 5 / _maxValue, 0, 0);
+            gameObject.transform.localScale += new Vector3(speed * 6 / _maxValue, 0, 0);
             yield return new WaitForEndOfFrame();
         }
     }
@@ -79,10 +81,10 @@ public class Slider : MonoBehaviour
                 break;
             }
 
-            value -= speed;
-            _currentValue -= speed;
+            value -= speed * 4;
+            _currentValue -= speed * 4;
 
-            gameObject.transform.localScale -= new Vector3(speed / _maxValue, 0, 0);
+            gameObject.transform.localScale -= new Vector3(speed * 4 / _maxValue, 0, 0);
             yield return new WaitForEndOfFrame();
         }
     }
