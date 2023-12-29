@@ -16,7 +16,7 @@ public class HpSlider : Slider
     public void Pause(bool pause, GeneratorSideType type)
     {
         StopCoroutine(_timer);
-        Debug.Log(pause);
+        //Debug.Log(pause);
 
         if (pause == false)
         { 
@@ -33,7 +33,7 @@ public class HpSlider : Slider
     void OnClick(bool isGood)
     {
         if (isGood)
-            AddTime(_costOfMistake*1.2f);
+            AddTime(_costOfMistake*1.1f);
         else
             RemoveTime(_costOfMistake);
     }

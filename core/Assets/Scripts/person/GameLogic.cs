@@ -77,6 +77,6 @@ public class GameLogic : MonoBehaviour
         generator.ChangeGenerateMethon(ColorsHolder.Instance.EyesAnswerTypes);
         generator.GenerateColor(ColorsHolder.Instance.BublesTypes);
 
-        //Debug.Log("Change " + generator._generateMethod);
+        //Debug.Log("Change " + generator.GenerateMethon);
     }
 }

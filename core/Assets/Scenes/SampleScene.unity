@@ -1212,8 +1212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4706156c505903f43a6e52d2bf34f3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.01
-  _costOfMistake: 10
+  speed: 0.02
+  _costOfMistake: 5
 --- !u!1001 &686599162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2389,7 +2389,7 @@ MonoBehaviour:
       color: 3
       image: {fileID: 2088912385, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
       goodEffect: {fileID: 0}
-    Probability: 2
+    Probability: 5
   - name: Everything
     ChoseType: 1
     Colors:
@@ -2397,7 +2397,7 @@ MonoBehaviour:
       color: -1
       image: {fileID: -1153625173, guid: 6a36cedf4dcd3c74eb238bb2c0fbc698, type: 3}
       goodEffect: {fileID: 0}
-    Probability: 1
+    Probability: 3
   - name: Null
     ChoseType: 2
     Colors:
@@ -2414,14 +2414,14 @@ MonoBehaviour:
       image: {fileID: 171471680, guid: db1d930c1c992d148884196014c80980, type: 3}
       goodEffect: {fileID: 0}
     - name: Green
-      color: 6
+      color: 2
       image: {fileID: 335261051, guid: db1d930c1c992d148884196014c80980, type: 3}
       goodEffect: {fileID: 0}
     - name: Blue
       color: 4
       image: {fileID: -388355042, guid: db1d930c1c992d148884196014c80980, type: 3}
       goodEffect: {fileID: 0}
-    Probability: 5
+    Probability: 8
   _bublesTypes:
   - name: Pink
     color: 1
