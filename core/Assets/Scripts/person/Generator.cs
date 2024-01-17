@@ -19,7 +19,6 @@ public class Generator
     private IChooseble _generateMethod;
 
     public GeneratorSideType SideType { get => _sideType; }
-
     public IChooseble GenerateMethon
     {
         get => _generateMethod;

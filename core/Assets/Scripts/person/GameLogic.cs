@@ -44,6 +44,8 @@ public class GameLogic : MonoBehaviour
             ChangeTask(_generators[(int)type]);
             ChangeColorAnimation?.Invoke(false, type);
 
+            CheckDoubleMethod();
+
             yield return new WaitForSeconds(_timeBetweenSpawn - 1);           
 
         }
@@ -78,5 +80,19 @@ public class GameLogic : MonoBehaviour
         generator.GenerateColor(ColorsHolder.Instance.BublesTypes);
 
         //Debug.Log("Change " + generator.GenerateMethon);
+    }
+
+    private void CheckDoubleMethod()
+    {
+        if (_generators[0].GenerateMethon.Type == _generators[1].GenerateMethon.Type)
+        {
+            if (_generators[0].GenerateMethon.Type == ChosesType.NullChoose)
+            {
+                var rand = UnityEngine.Random.Range(0, 2);
+
+                ChangeTask(_generators[rand]);
+            }
+
+        }
     }
 }

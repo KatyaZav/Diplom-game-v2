@@ -15,7 +15,9 @@ public class HpSlider : Slider
 
     public void Pause(bool pause, GeneratorSideType type)
     {
-        StopCoroutine(_timer);
+        if (_timer != null)
+            StopCoroutine(_timer);
+
         //Debug.Log(pause);
 
         if (pause == false)

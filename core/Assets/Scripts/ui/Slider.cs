@@ -22,7 +22,7 @@ public class Slider : MonoBehaviour
 
         gameObject.transform.localScale = new Vector3(1, 1, 1);
 
-        _timer = StartCoroutine(TimerLogic());
+        //_timer = StartCoroutine(TimerLogic());
     }
 
     public void AddTime(float value) => StartCoroutine(AddingTime(value));
