@@ -13,6 +13,8 @@ public class EyeUI : MonoBehaviour
 
     public void Inizialize()
     {
+        _anim.SetTrigger("start");
+        
         Generator.ChangedTask += ChangeEye;
         GameLogic.ChangeColorAnimation += DisactivateButtons;
     }
