@@ -6,6 +6,23 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float _speed;
     [SerializeField] Vector3 _targetPosition;
+
+    private int _health = 3;
+
+    public void RemoveHp(int hp = 1)
+    {
+        _health -= hp;
+
+        if (_health <= 0)
+        {
+            Debug.Log("Lose");
+        }
+    }
+    public void AddHp(int hp = 1)
+    {
+        _health += hp;
+    }
+
     void Update()
     {
         if (Input.GetMouseButton(0))
