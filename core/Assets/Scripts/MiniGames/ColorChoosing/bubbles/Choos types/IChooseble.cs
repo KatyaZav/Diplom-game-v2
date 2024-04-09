@@ -1,4 +1,4 @@
-namespace Bubbles
+namespace ColorChooseGame.Bubbles
 {
     public interface IChooseble
     {

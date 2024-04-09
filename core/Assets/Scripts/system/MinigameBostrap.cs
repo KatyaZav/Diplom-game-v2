@@ -1,38 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MinigameBostrap : MonoBehaviour
+namespace ColorChooseGame
 {
-    [SerializeField] private GameLogic _gameLogic;
-    [SerializeField] private Bubbles.BubblePalette[] _palets;
-    [SerializeField] private EyeUI[] _eyeUI;
-    [SerializeField] private CharacterAnimator _character;
-    [SerializeField] private Slider _slider;
-    [SerializeField] private Points _points;
-
-
-
-    private void OnEnable()
+    public class MinigameBostrap : MonoBehaviour
     {
-        Slider.GameEnded += GameEnd;
+        [SerializeField] private GameLogic _gameLogic;
+        [SerializeField] private Bubbles.BubblePalette[] _palets;
+        [SerializeField] private EyeUI[] _eyeUI;
+        [SerializeField] private CharacterAnimator _character;
+        [SerializeField] private Slider _slider;
+        [SerializeField] private Points _points;
 
-        _character.Inizialize();
+        private void OnEnable()
+        {
+            Slider.GameEnded += GameEnd;
 
-        foreach (var pallet in _palets)
-            pallet.Inizialize();
+            _character.Inizialize();
 
-        foreach (var eye in _eyeUI)
-            eye.Inizialize();
+            foreach (var pallet in _palets)
+                pallet.Inizialize();
 
-        _gameLogic.Inizialize();
-        _points.Inizialize(0);
+            foreach (var eye in _eyeUI)
+                eye.Inizialize();
 
-        _slider.Inizialize(30);
-    }
+            _gameLogic.Inizialize();
+            _points.Inizialize(0);
 
-    private void GameEnd()
-    {
-        gameObject.SetActive(false);
+            _slider.Inizialize(30);
+        }
+
+        private void GameEnd()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

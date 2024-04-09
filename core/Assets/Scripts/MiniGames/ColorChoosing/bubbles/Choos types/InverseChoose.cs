@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
 
-namespace Bubbles
+namespace ColorChooseGame.Bubbles
 {
     public class InverseChoose : IChooseble
     {

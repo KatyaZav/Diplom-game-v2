@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-namespace Bubbles
+namespace ColorChooseGame.Bubbles
 {
     [Flags]
     public enum ColorType
