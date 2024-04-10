@@ -13,5 +13,6 @@ public class HitObstacle : BaseObstacle
     public override void OnCollisionPlayer(PlayerController player)
     {
         player.RemoveHp();
+        Destroy(gameObject);
     }
 }

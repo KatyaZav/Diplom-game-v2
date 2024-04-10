@@ -8,12 +8,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Vector3 _targetPosition;
 
     [SerializeField] float _leftBorder, _rightBorder;
+    [SerializeField] Collider2D _colider;
 
     private int _health = 3;
 
     public void RemoveHp(int hp = 1)
     {
         _health -= hp;
+        MakeUnHittable(1.5f);
 
         if (_health <= 0)
         {
@@ -23,6 +25,17 @@ public class PlayerController : MonoBehaviour
     public void AddHp(int hp = 1)
     {
         _health += hp;
+    }
+
+    private void MakeUnHittable(float time)
+    {
+        _colider.enabled = false;
+        Invoke("MakeHitteble", time);
+    }
+
+    private void MakeHitteble()
+    {
+        _colider.enabled = true;
     }
 
     void Update()
