@@ -26,7 +26,7 @@ namespace ColorChooseGame
             _gameLogic.Inizialize();
             _points.Inizialize(0);
 
-            _slider.Inizialize(30);
+            _slider.Inizialize(10*PlayerController.GetHealth());
         }
 
         private void GameEnd()

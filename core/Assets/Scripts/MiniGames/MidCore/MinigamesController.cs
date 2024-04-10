@@ -6,7 +6,7 @@ public class MinigamesController : MonoBehaviour
 {
     [SerializeField] GameObject _colorChooseGame;
 
-    void Init()
+    public void Init()
     {
         ColorGameObstacle.ColorMinigameCathed += ActivateColorGame;    
     }

@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Botstrap : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] LevelHolder _levelHolder;
+    [SerializeField] MinigamesController _minigamesController;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _minigamesController.Init();
+        _levelHolder.Init();
     }
 }

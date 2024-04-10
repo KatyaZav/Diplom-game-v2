@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _leftBorder, _rightBorder;
     [SerializeField] Collider2D _colider;
 
-    private int _health = 3;
+    private static int _health = 3;
+    
+    public static int GetHealth() => _health;
 
     public void RemoveHp(int hp = 1)
     {
