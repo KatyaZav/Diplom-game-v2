@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _speed;
     [SerializeField] Vector3 _targetPosition;
 
+    [SerializeField] float _leftBorder, _rightBorder;
+
     private int _health = 3;
 
     public void RemoveHp(int hp = 1)
@@ -38,11 +40,11 @@ public class PlayerController : MonoBehaviour
         var mousePos = Input.mousePosition;
         var mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePos);
 
-        if (mouseWorldPosition.x < -2.61f)
-            mouseWorldPosition.x = -2.61f;
+        if (mouseWorldPosition.x < _leftBorder)
+            mouseWorldPosition.x = _leftBorder;
 
-        if (mouseWorldPosition.x > 2.59f)
-            mouseWorldPosition.x = 2.59f;
+        if (mouseWorldPosition.x > _rightBorder)
+            mouseWorldPosition.x = _rightBorder;
 
         mouseWorldPosition.y = transform.position.y;
         mouseWorldPosition.z = 0;
