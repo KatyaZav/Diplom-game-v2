@@ -25,7 +25,7 @@ public class BaseLevel : MonoBehaviour
         _previosSpeed = _currentSpeed;
         _currentSpeed = 0;
     }
-    public static void RevertSpeedToPrevious()
+    public static void SetSpeedToPrevious()
     {
         _currentSpeed = _previosSpeed;
     }

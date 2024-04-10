@@ -11,6 +11,22 @@ public class MinigamesController : MonoBehaviour
         ColorGameObstacle.ColorMinigameCathed += ActivateColorGame;    
     }
 
+    public void PauseGame()
+    {
+        BaseLevel.StopLevel();
+    }
+
+    public void ContinueGame()
+    {
+        Debug.Log("added some points");
+        BaseLevel.SetSpeedToPrevious();
+    }
+
+    public void LoseGame()
+    {
+        Debug.Log("lose minigame");
+    }
+
     private void OnDisable()
     {
         ColorGameObstacle.ColorMinigameCathed -= ActivateColorGame;   
@@ -18,6 +34,7 @@ public class MinigamesController : MonoBehaviour
 
     void ActivateColorGame()
     {
+        PauseGame();
         _colorChooseGame.SetActive(true);
     }
 }

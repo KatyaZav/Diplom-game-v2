@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Collider2D _colider;
 
     private static int _health = 3;
-    
+
     public static int GetHealth() => _health;
 
     public void RemoveHp(int hp = 1)

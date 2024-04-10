@@ -10,6 +10,28 @@ namespace ColorChooseGame
     {
         public static Action<bool> ClickedButton;
         public static Action<bool, GeneratorSideType> ChangeColorAnimation;
+        public static Action WinEvent;
+
+        private int _clickWinCount;
+        private int _currentkWinCount = 0;
+
+        public bool AddClick()
+        {
+            _currentkWinCount++;
+
+            if (_clickWinCount == -1)
+                return false;
+
+            if (_currentkWinCount >= _clickWinCount)
+            {
+                Debug.Log("Win colorGame");
+                WinEvent?.Invoke();
+                StopAllCoroutines();
+                return true;
+            }
+
+            return false;
+        }
 
         //[SerializeField] Bubbles.ColorsHolder _holder;
         [SerializeField]
@@ -24,8 +46,9 @@ namespace ColorChooseGame
         private Coroutine gen1;
         private Coroutine gen2;
 
-        public void Inizialize()
+        public void Inizialize(int needCountToWin = -1)
         {
+            _clickWinCount = needCountToWin;
             //ChangeTask(_generators[1]);
 
             BubbleButton.BubbleClicked += OnButtonClick;
@@ -63,6 +86,10 @@ namespace ColorChooseGame
         {
             //Debug.Log("button clicked");
             ClickedButton?.Invoke(_generators[(int)type].CheckAnswer(color));
+
+            if (_generators[(int)type].CheckAnswer(color))
+                if (AddClick())
+                    return;
 
             if (type == GeneratorSideType.right)
             {

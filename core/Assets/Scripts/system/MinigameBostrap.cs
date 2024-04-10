@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ColorChooseGame
 {
@@ -11,9 +12,13 @@ namespace ColorChooseGame
         [SerializeField] private Slider _slider;
         [SerializeField] private Points _points;
 
+        [SerializeField] private UnityEvent LoseGameEvent; 
+        [SerializeField] private UnityEvent WinGameEvent;
+
         private void OnEnable()
         {
             Slider.GameEnded += GameEnd;
+            GameLogic.WinEvent += Win;
 
             _character.Inizialize();
 
@@ -23,15 +28,30 @@ namespace ColorChooseGame
             foreach (var eye in _eyeUI)
                 eye.Inizialize();
 
-            _gameLogic.Inizialize();
+            var rnd = Random.Range(2, 5);
+
+            _gameLogic.Inizialize(rnd);
             _points.Inizialize(0);
 
             _slider.Inizialize(10*PlayerController.GetHealth());
         }
 
+        private void OnDisable()
+        {
+            Slider.GameEnded -= GameEnd;
+            GameLogic.WinEvent -= Win;
+        }
+
         private void GameEnd()
         {
             gameObject.SetActive(false);
+            LoseGameEvent?.Invoke();
+        }
+
+        private void Win()
+        {
+            gameObject.SetActive(false);
+            WinGameEvent?.Invoke();
         }
     }
 }
