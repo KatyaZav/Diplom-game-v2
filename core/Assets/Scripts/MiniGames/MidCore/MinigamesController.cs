@@ -1,40 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MinigamesController : MonoBehaviour
+namespace midgame
 {
-    [SerializeField] GameObject _colorChooseGame;
-
-    public void Init()
+    public class MinigamesController : MonoBehaviour
     {
-        ColorGameObstacle.ColorMinigameCathed += ActivateColorGame;    
-    }
 
-    public void PauseGame()
-    {
-        BaseLevel.StopLevel();
-    }
+        [SerializeField] GameObject _colorChooseGame;
 
-    public void ContinueGame()
-    {
-        Debug.Log("added some points");
-        BaseLevel.SetSpeedToPrevious();
-    }
+        public void Init()
+        {
+            ColorGameObstacle.ColorMinigameCathed += ActivateColorGame;
+        }
 
-    public void LoseGame()
-    {
-        Debug.Log("lose minigame");
-    }
+        public void PauseGame()
+        {
+            BaseLevel.StopLevel();
+        }
 
-    private void OnDisable()
-    {
-        ColorGameObstacle.ColorMinigameCathed -= ActivateColorGame;   
-    }
+        public void ContinueGame()
+        {
+            Debug.Log("added some points");
+            BaseLevel.SetSpeedToPrevious();
+        }
 
-    void ActivateColorGame()
-    {
-        PauseGame();
-        _colorChooseGame.SetActive(true);
+        public void LoseGame()
+        {
+            Debug.Log("lose minigame");
+        }
+
+        private void OnDisable()
+        {
+            ColorGameObstacle.ColorMinigameCathed -= ActivateColorGame;
+        }
+
+        void ActivateColorGame()
+        {
+            PauseGame();
+            _colorChooseGame.SetActive(true);
+        }
     }
 }
