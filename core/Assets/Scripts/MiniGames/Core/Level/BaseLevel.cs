@@ -1,27 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseLevel : MonoBehaviour
 {
 
-    private static float _speed = 1f;
+    private static float _currentSpeed = 1f;
+    private static float _previosSpeed = 1f;
 
-    public static float GetSpeed() => _speed;
+    public static float GetSpeed() => _currentSpeed;
 
-    public static void UpdateSpeed(float speedAdd = 0.1f)
+    public static void AddSpeed(float speedAdd = 0.1f)
     {
-        _speed += speedAdd;
+        _previosSpeed = _currentSpeed;
+        _currentSpeed += speedAdd;
 
-        if (_speed > 5)
-            _speed = 5;
+        if (_currentSpeed > 5)
+            _currentSpeed = 5;
 
-        if (_speed < -5)
-            _speed = -5;
+        if (_currentSpeed < -5)
+            _currentSpeed = -5;
+    }
+
+    public static void StopLevel()
+    {
+        _previosSpeed = _currentSpeed;
+        _currentSpeed = 0;
+    }
+    public static void RevertSpeedToPrevious()
+    {
+        _currentSpeed = _previosSpeed;
     }
 
     private void Update()
     {
-        transform.Translate(transform.up * -1 * _speed * Time.deltaTime);
+        transform.Translate(transform.up * -1 * _currentSpeed * Time.deltaTime);
     }
 }
