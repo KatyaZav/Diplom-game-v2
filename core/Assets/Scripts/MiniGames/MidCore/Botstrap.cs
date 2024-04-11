@@ -9,7 +9,7 @@ public class Botstrap : MonoBehaviour
     [SerializeField] LevelGenerator _levelGenerator;
     [SerializeField] HealthUI _healthUi;
 
-    void Start()
+    void OnEnable()
     {
         _levelHolder.Init();
         _minigamesController.Init();

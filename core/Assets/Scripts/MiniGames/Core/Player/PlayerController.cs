@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public void RemoveHp(int hp = 1)
     {
         _health -= hp;
-        MakeUnHittable(1.5f);
+        //MakeUnHittable(1.5f);
 
         RemovedHp?.Invoke(_health);
 
