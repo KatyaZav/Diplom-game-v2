@@ -10,8 +10,8 @@ public class Botstrap : MonoBehaviour
 
     void Start()
     {
-        _minigamesController.Init();
         _levelHolder.Init();
+        _minigamesController.Init();
         _levelGenerator.Init(); 
     }
 }

@@ -35,6 +35,9 @@ namespace Level
         private void Update()
         {
             transform.Translate(transform.up * -1 * _currentSpeed * Time.deltaTime);
+
+            if (transform.position.y <= -16f)
+                Destroy(gameObject);                
         }
     }
 }

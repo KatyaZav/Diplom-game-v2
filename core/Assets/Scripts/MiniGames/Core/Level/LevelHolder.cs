@@ -21,6 +21,8 @@ namespace Level
         {
             _bothLane.AddRange(_leftLane);
             _bothLane.AddRange(_rightLane);
+
+            _currentLaneMassive = _bothLane;
         }
 
         public void Changelane(LaneFix lane)
