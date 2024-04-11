@@ -15,11 +15,11 @@ namespace Level
             _previosSpeed = _currentSpeed;
             _currentSpeed += speedAdd;
 
-            if (_currentSpeed > 5)
-                _currentSpeed = 5;
+            if (_currentSpeed > 6)
+                _currentSpeed = 6;
 
-            if (_currentSpeed < -5)
-                _currentSpeed = -5;
+            if (_currentSpeed < -6)
+                _currentSpeed = -6;
         }
 
         public static void StopLevel()

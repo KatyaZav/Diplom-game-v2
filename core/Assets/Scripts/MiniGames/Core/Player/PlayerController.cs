@@ -47,6 +47,9 @@ public class PlayerController : MonoBehaviour
             ChooseTargetPoint();
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+            Level.BaseLevel.AddSpeed(1);
+
         transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.deltaTime);
     }
 
