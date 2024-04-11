@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static Action<int> AddedHp; 
+    public static Action<int> RemovedHp; 
+
     [SerializeField] float _speed;
     [SerializeField] Vector3 _targetPosition;
 
@@ -11,13 +15,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Collider2D _colider;
 
     private static int _health = 3;
-
+    
     public static int GetHealth() => _health;
 
     public void RemoveHp(int hp = 1)
     {
         _health -= hp;
         MakeUnHittable(1.5f);
+
+        RemovedHp?.Invoke(_health);
 
         if (_health <= 0)
         {
@@ -27,6 +33,8 @@ public class PlayerController : MonoBehaviour
     public void AddHp(int hp = 1)
     {
         _health += hp;
+
+        AddedHp?.Invoke(_health);
     }
 
     private void MakeUnHittable(float time)

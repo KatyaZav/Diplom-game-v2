@@ -1254,6 +1254,7 @@ MonoBehaviour:
   _levelHolder: {fileID: 1973980477}
   _minigamesController: {fileID: 1565192103}
   _levelGenerator: {fileID: 1951741482}
+  _healthUi: {fileID: 1177107076}
 --- !u!1 &673719372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,6 +2207,7 @@ GameObject:
   - component: {fileID: 1177107073}
   - component: {fileID: 1177107075}
   - component: {fileID: 1177107074}
+  - component: {fileID: 1177107076}
   m_Layer: 5
   m_Name: hp
   m_TagString: Untagged
@@ -2273,6 +2275,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177107072}
   m_CullTransparentMesh: 1
+--- !u!114 &1177107076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177107072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76103a3e960b94e4d845c11a3172f292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 301172900}
 --- !u!1 &1263973583
 GameObject:
   m_ObjectHideFlags: 0
