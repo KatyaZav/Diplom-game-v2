@@ -25,24 +25,24 @@ namespace Level
             _currentLaneMassive = _bothLane;
         }
 
-        public void Changelane(LaneFix lane)
+        public void Changelane(RoadLine lane)
         {
             switch (lane)
             {
-                case LaneFix.left:
+                case RoadLine.left:
                     _currentLaneMassive = _leftLane;
                     break;
-                case LaneFix.right:
+                case RoadLine.right:
                     _currentLaneMassive = _rightLane;
                     break;
-                case LaneFix.both:
+                case RoadLine.both:
                     _currentLaneMassive = _bothLane;
                     break;
             }
         }
     }
 
-    public enum LaneFix
+    public enum RoadLine
     {
         left = 0,
         right = 1,

@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Level;
 
 public class PlayerController : MonoBehaviour
 {
     public static Action<int> AddedHp; 
-    public static Action<int> RemovedHp; 
+    public static Action<int> RemovedHp;
+
+    [SerializeField] LevelHolder _levelHolder; 
 
     [SerializeField] float _speed;
     [SerializeField] Vector3 _targetPosition;
@@ -15,8 +18,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Collider2D _colider;
 
     private static int _health = 3;
-    
+    private bool isCrossed = true;
+
+    RoadLine _roadLine = RoadLine.both;
+
+    public void ChangeRoadLine(RoadLine line)
+    {
+        _roadLine = line;
+        _levelHolder.Changelane(_roadLine);
+        CrossLine();
+    }
+
     public static int GetHealth() => _health;
+       
 
     public void RemoveHp(int hp = 1)
     {
@@ -59,6 +73,47 @@ public class PlayerController : MonoBehaviour
             Level.BaseLevel.AddSpeed(1);
 
         transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.deltaTime);
+
+        if (CheackIsCrossingLine())
+            CrossLine();
+    }
+
+    bool CheackIsCrossingLine()
+    {
+        if (transform.position.x >= -0.65f && transform.position.x <= 0.65f)
+        {
+            if (isCrossed)
+            {
+                isCrossed = false;
+                return true;
+            }
+        }
+        else{
+            isCrossed = true;
+            return false;
+        }
+
+        return false;
+    }
+
+    void CrossLine()
+    {
+        Debug.Log("CrossLine");
+
+        if (_roadLine == RoadLine.both)
+            return;
+
+        if (transform.position.x > 0.65f && _roadLine == RoadLine.left)
+        {
+            RemoveHp();
+            return;
+        }
+
+        if (transform.position.x < 0.65f && _roadLine == RoadLine.right)
+        {
+            RemoveHp();
+            return;
+        }
     }
 
     void ChooseTargetPoint()
