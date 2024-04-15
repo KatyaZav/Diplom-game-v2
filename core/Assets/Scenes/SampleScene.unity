@@ -2103,8 +2103,8 @@ SpriteRenderer:
   m_SortingLayerID: 2083630523
   m_SortingLayer: 1
   m_SortingOrder: 10
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.27707863, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 985217105, guid: 4ec5d1de1ac3c6f4bb1bc01de1ea336d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2122,8 +2122,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173470289}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.58, y: -3.744757, z: 0}
-  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
+  m_LocalPosition: {x: 2.8, y: -3.9, z: 0}
+  m_LocalScale: {x: 1.0267817, y: 0.88447666, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 596062113}
@@ -2142,9 +2142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 9
-  _targetPosition: {x: 2.58, y: -3.744757, z: 0}
-  _leftBorder: -2.58
-  _rightBorder: 2.58
+  _targetPosition: {x: 2.8, y: -3.9, z: 0}
+  _leftBorder: -3
+  _rightBorder: 3
   _colider: {fileID: 1173470294}
 --- !u!58 &1173470294
 CircleCollider2D:
@@ -2178,9 +2178,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.6993476}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.40684217
 --- !u!50 &1173470295
 Rigidbody2D:
   serializedVersion: 4
