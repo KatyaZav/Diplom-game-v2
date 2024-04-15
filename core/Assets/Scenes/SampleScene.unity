@@ -3365,7 +3365,9 @@ MonoBehaviour:
   - {fileID: 5461899873752564605, guid: 625d4d4b447da7744a0f879d0f90462c, type: 3}
   - {fileID: 4935343827436693081, guid: eee66e997ef8cd84a868a25bb34236c1, type: 3}
   - {fileID: 310620424794065215, guid: 64349bb9a9b6ef740973910c9dc865bb, type: 3}
-  _bothLane: []
+  - {fileID: 4658637430044058934, guid: c5ae0dc2b7f78d143919567a376c7c50, type: 3}
+  _bothLane:
+  - {fileID: 5881213163225385278, guid: afec4d7dfe5c55a448d10e4952e371e3, type: 3}
 --- !u!1 &2059741824
 GameObject:
   m_ObjectHideFlags: 0

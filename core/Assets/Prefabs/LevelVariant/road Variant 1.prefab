@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: road Variant 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5399726323714140354, guid: eee66e997ef8cd84a868a25bb34236c1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032270640500433568, guid: eee66e997ef8cd84a868a25bb34236c1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3782
+      objectReference: {fileID: 0}
     - target: {fileID: 7724350055002371112, guid: eee66e997ef8cd84a868a25bb34236c1, type: 3}
       propertyPath: m_RootOrder
       value: 0
