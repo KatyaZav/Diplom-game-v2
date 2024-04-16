@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public static Action<int> AddedHp; 
     public static Action<int> RemovedHp;
 
+    [SerializeField] GameObject _effect;
     [SerializeField] LevelHolder _levelHolder; 
 
     [SerializeField] float _speed;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private static int _health = 3;
     private bool isCrossed = true;
+    bool _canMove = true;
 
     RoadLine _roadLine = RoadLine.both;
     private bool _isLeft = false;
@@ -67,8 +69,12 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButton(0) && BaseLevel.GetSpeed() != 0)
         {
-            ChooseTargetPoint();
+            if (_canMove)
+                ChooseTargetPoint();
         }
+
+        if (Input.GetMouseButtonUp(0))
+            _canMove = true;
 
         if (Input.GetKeyDown(KeyCode.Space))
             Level.BaseLevel.AddSpeed(1);
@@ -129,6 +135,8 @@ public class PlayerController : MonoBehaviour
 
     void MoveToCorrectLine()
     {
+        _effect.SetActive(true);
+        _canMove = false;
         Debug.Log("Move to "+_roadLine);
 
         if (_roadLine == RoadLine.left)
