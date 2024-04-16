@@ -6,6 +6,7 @@ using TMPro;
 public class HealthUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI text;
+    [SerializeField] Animator _anim;
 
     public void Init()
     {
@@ -27,5 +28,6 @@ public class HealthUI : MonoBehaviour
     void RemoveHp(int hp)
     {
         text.text = hp.ToString();
+        _anim.SetTrigger("destroy");
     }
 }
