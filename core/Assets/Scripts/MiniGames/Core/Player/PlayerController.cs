@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private bool isCrossed = true;
 
     RoadLine _roadLine = RoadLine.both;
+    private bool _isLeft = false;
 
     public void ChangeRoadLine(RoadLine line)
     {
@@ -64,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && BaseLevel.GetSpeed() != 0)
         {
             ChooseTargetPoint();
         }
@@ -80,17 +81,25 @@ public class PlayerController : MonoBehaviour
 
     bool CheackIsCrossingLine()
     {
-        if (transform.position.x >= -0.65f && transform.position.x <= 0.65f)
+        if (transform.position.x >= 0.35f)
         {
-            if (isCrossed)
+            if (_isLeft == true)
             {
-                isCrossed = false;
+                _isLeft = false;
                 return true;
             }
+
+            _isLeft = false;
         }
-        else{
-            isCrossed = true;
-            return false;
+        else if (transform.position.x <= -0.35f)
+        {
+            if (_isLeft == false)
+            {
+                _isLeft = true;
+                return true;
+            }
+
+            _isLeft = true;
         }
 
         return false;
@@ -103,17 +112,38 @@ public class PlayerController : MonoBehaviour
         if (_roadLine == RoadLine.both)
             return;
 
-        if (transform.position.x > 0.65f && _roadLine == RoadLine.left)
+        if (transform.position.x >= 0.2f && _roadLine == RoadLine.left)
         {
             RemoveHp();
+            MoveToCorrectLine();
             return;
         }
 
-        if (transform.position.x < 0.65f && _roadLine == RoadLine.right)
+        if (transform.position.x <= -0.2f && _roadLine == RoadLine.right)
         {
             RemoveHp();
+            MoveToCorrectLine();
             return;
         }
+    }
+
+    void MoveToCorrectLine()
+    {
+        Debug.Log("Move to "+_roadLine);
+
+        if (_roadLine == RoadLine.left)
+        {
+            _isLeft = true;
+            transform.position = new Vector3(-2, transform.position.y, transform.position.z);
+        }
+
+        if (_roadLine == RoadLine.right)
+        {
+            _isLeft = false;
+            transform.position = new Vector3(2, transform.position.y, transform.position.z);
+        }
+
+        _targetPosition = transform.position;
     }
 
     void ChooseTargetPoint()
