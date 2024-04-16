@@ -6988,7 +6988,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2083630523
   m_SortingLayer: 1
-  m_SortingOrder: 10
+  m_SortingOrder: 50
   m_Sprite: {fileID: 985217105, guid: 4ec5d1de1ac3c6f4bb1bc01de1ea336d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8271,7 +8271,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _leftLane:
+  - {fileID: 7027271202450555833, guid: f40e31309560b6547902d9eb3ea0dac7, type: 3}
+  - {fileID: 7556956458062722861, guid: 3ca87a850b68ac3419aabe6c6c359fc7, type: 3}
   - {fileID: 8482809858962127809, guid: 7d957d83a9ac4b74cb9daa581a161924, type: 3}
+  - {fileID: 7791980286581748352, guid: 021e031a233459e4aa042c9f2402abee, type: 3}
+  - {fileID: 2915639071877673710, guid: d30486a798ecf1446a7cb4142efd7055, type: 3}
+  - {fileID: 6486143455618896161, guid: e096de08c49590a42ae8d939a8cabe52, type: 3}
+  - {fileID: 5002230148720516443, guid: 808ac5598c15bc949a359f7d9901504a, type: 3}
+  - {fileID: 8736371016832823867, guid: 43857b9f752148745935e577651bae4b, type: 3}
+  - {fileID: 6256423366242239605, guid: d6559c83fa14c764cba52023ada5992f, type: 3}
   - {fileID: 2061400620539260445, guid: b1434f90b5cb9dc47bc09cae05122b67, type: 3}
   - {fileID: 2061400620539260445, guid: 041e9799939f4904bb65f2bfe393048f, type: 3}
   - {fileID: 1107872314737788333, guid: d256a3dab1a2e5141aa4efe65d4f1016, type: 3}
@@ -8290,6 +8298,12 @@ MonoBehaviour:
   - {fileID: 897330859320700637, guid: 50f17c9d76ecec448a21fc955dba3741, type: 3}
   _rightLane:
   - {fileID: 4935343827436693081, guid: eee66e997ef8cd84a868a25bb34236c1, type: 3}
+  - {fileID: 7791980286581748352, guid: 20bf055fd4967494d9e469b559112e6c, type: 3}
+  - {fileID: 2915639071877673710, guid: f68648629398e5d4f87d61e58e60a8d5, type: 3}
+  - {fileID: 6486143455618896161, guid: 04f0af42f26efb643a563ab60a1b92db, type: 3}
+  - {fileID: 5002230148720516443, guid: baf62e51ec1eef64590f4fa6434a3db0, type: 3}
+  - {fileID: 8736371016832823867, guid: 52261aaef941cbf40af1f0cb298d36be, type: 3}
+  - {fileID: 6256423366242239605, guid: 51372376deba171468e66f1e3cb8a666, type: 3}
   - {fileID: 310620424794065215, guid: 64349bb9a9b6ef740973910c9dc865bb, type: 3}
   - {fileID: 4658637430044058934, guid: c5ae0dc2b7f78d143919567a376c7c50, type: 3}
   - {fileID: 5881213163225385278, guid: afec4d7dfe5c55a448d10e4952e371e3, type: 3}
@@ -8309,7 +8323,6 @@ MonoBehaviour:
   - {fileID: 2646706738559168655, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
   - {fileID: 367877570541676106, guid: bbb69b6f4cd4dfe42a34d66cc4099efa, type: 3}
   - {fileID: 897330859320700637, guid: 233056fb9346d1b468c47163431b1230, type: 3}
-  - {fileID: 5461899873752564605, guid: 625d4d4b447da7744a0f879d0f90462c, type: 3}
   _bothLane: []
 --- !u!1 &2059741824
 GameObject:
