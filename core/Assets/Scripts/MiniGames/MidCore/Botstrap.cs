@@ -17,5 +17,6 @@ public class Botstrap : MonoBehaviour
         _healthUi.Init();
 
         BaseLevel.RestartSpeed();
+        PlayerController.ReloadHealth();
     }
 }

@@ -18,12 +18,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float _leftBorder, _rightBorder;
     [SerializeField] Collider2D _colider;
 
-    private static int _health = 3;
+    private static int _health;
     private bool isCrossed = true;
     bool _canMove = true;
 
     RoadLine _roadLine = RoadLine.both;
     private bool _isLeft = false;
+
+    public static void ReloadHealth()
+    {
+        _health = 3;
+    }
 
     public void ChangeRoadLine(RoadLine line)
     {
@@ -115,7 +120,7 @@ public class PlayerController : MonoBehaviour
 
     void CrossLine()
     {
-        Debug.Log("CrossLine");
+        //Debug.Log("CrossLine");
 
         if (_roadLine == RoadLine.both)
             return;
