@@ -5,13 +5,13 @@ namespace Level
     public class BaseLevel : MonoBehaviour
     {
 
-        private static float _currentSpeed = 1f;
-        private static float _previosSpeed = 1f;
+        private static float _currentSpeed;
+        private static float _previosSpeed;
 
         public static void RestartSpeed()
         {
-            _previosSpeed = 1f;
-            _currentSpeed = 1f;
+            _previosSpeed = 5f;
+            _currentSpeed = 5f;
         }
         public static float GetSpeed() => _currentSpeed;
 
@@ -20,11 +20,11 @@ namespace Level
             _previosSpeed = _currentSpeed;
             _currentSpeed += speedAdd;
 
-            if (_currentSpeed > 6)
-                _currentSpeed = 6;
+            if (_currentSpeed > 7)
+                _currentSpeed = 7;
 
-            if (_currentSpeed < -6)
-                _currentSpeed = -6;
+            if (_currentSpeed < -7)
+                _currentSpeed = -7;
         }
 
         public static void StopLevel()

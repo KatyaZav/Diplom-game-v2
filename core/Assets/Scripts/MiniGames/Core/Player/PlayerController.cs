@@ -76,9 +76,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
             _canMove = true;
 
-        if (Input.GetKeyDown(KeyCode.Space))
-            Level.BaseLevel.AddSpeed(1);
-
+        #if UNITY_EDITOR
+            if (Input.GetKeyDown(KeyCode.Space))
+                Level.BaseLevel.AddSpeed(1);
+        #endif
+        
         transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed * Time.deltaTime);
 
         if (CheackIsCrossingLine())
