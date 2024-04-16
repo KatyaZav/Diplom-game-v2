@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     public void RemoveHp(int hp = 1)
     {
+        _effect.SetActive(true);
         _health -= hp;
         //MakeUnHittable(1.5f);
 
@@ -141,8 +142,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void MoveToCorrectLine()
-    {
-        _effect.SetActive(true);
+    {        
         _canMove = false;
         Debug.Log("Move to "+_roadLine);
 

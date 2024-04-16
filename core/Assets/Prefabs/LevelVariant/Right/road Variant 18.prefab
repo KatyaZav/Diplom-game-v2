@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2422949183922886341
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 861673782456820478, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 861673782456820478, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.04257828
+      objectReference: {fileID: 0}
+    - target: {fileID: 861673782456820478, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.98963594
+      objectReference: {fileID: 0}
+    - target: {fileID: 861673782456820478, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 861673782456820478, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 861673782456820478, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 861673782456820478, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 861673782456820478, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 861673782456820478, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 861673782456820478, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 861673782456820478, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646706738559168655, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+      propertyPath: m_Name
+      value: road Variant 18
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 9088023615226087746, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+    - {fileID: 5361405930176817806, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+    - {fileID: 3124513480571855111, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+    - {fileID: 5773144523802556310, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1607137d295f5e143adbd45794d4be67, type: 3}
