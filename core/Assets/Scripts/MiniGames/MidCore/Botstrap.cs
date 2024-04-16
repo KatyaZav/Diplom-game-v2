@@ -15,5 +15,7 @@ public class Botstrap : MonoBehaviour
         _minigamesController.Init();
         _levelGenerator.Init();
         _healthUi.Init();
+
+        BaseLevel.RestartSpeed();
     }
 }

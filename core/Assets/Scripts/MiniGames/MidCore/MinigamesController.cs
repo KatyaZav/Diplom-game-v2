@@ -37,6 +37,7 @@ namespace midgame
         public void LoseGame()
         {
             Debug.Log("lose minigame");
+            BaseLevel.SetSpeedToPrevious();
             LosedGame?.Invoke();
         }
 
