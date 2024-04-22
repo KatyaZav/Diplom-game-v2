@@ -23,6 +23,7 @@ public class HealthUI : MonoBehaviour
     void AddHp(int hp)
     {
         text.text = hp.ToString();
+        _anim.SetTrigger("add");
     }
 
     void RemoveHp(int hp)
