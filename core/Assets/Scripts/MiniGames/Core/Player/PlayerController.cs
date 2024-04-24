@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public static Action<int> AddedHp; 
     public static Action<int> RemovedHp;
 
+    [SerializeField] Animator _anim;
     [SerializeField] GameObject _effect;
     [SerializeField] LevelHolder _levelHolder; 
 
@@ -50,7 +51,12 @@ public class PlayerController : MonoBehaviour
 
         if (_health <= 0)
         {
+            _anim.SetTrigger("dead");
             Debug.Log("Lose");
+        }
+        else
+        {
+            _anim.SetTrigger("hit");
         }
     }
     public void AddHp(int hp = 1)
