@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private static int _health;
     private bool isCrossed = true;
     bool _canMove = true;
+    bool isDead = false;
 
     RoadLine _roadLine = RoadLine.both;
     private bool _isLeft = false;
@@ -53,6 +54,7 @@ public class PlayerController : MonoBehaviour
         {
             _anim.SetTrigger("dead");
             Debug.Log("Lose");
+            isDead = true;
         }
         else
         {
@@ -79,6 +81,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (isDead == true)
+            return;
+
+        Points.Instance.AddPoint(Time.deltaTime);
+
         if (Input.GetMouseButton(0) && BaseLevel.GetSpeed() != 0)
         {
             if (_canMove)

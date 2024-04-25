@@ -7,7 +7,7 @@ namespace midgame
 {
     public class MinigamesController : MonoBehaviour
     {
-
+        [SerializeField] GameObject _menu;
         [SerializeField] GameObject _colorChooseGame;
 
         [SerializeField] UnityEvent LosedGame;
@@ -51,7 +51,15 @@ namespace midgame
         void CheckLose(int a)
         {
             if (a <= 0)
-                ReloadScene();
+            {
+                BaseLevel.StopLevel();
+                Invoke("ActiveMenu", 1f);
+            }
+        }
+
+        void ActiveMenu()
+        {
+            _menu.SetActive(true);
         }
 
         void ActivateColorGame()
