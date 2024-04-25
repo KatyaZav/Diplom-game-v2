@@ -30,7 +30,8 @@ namespace midgame
 
         public void ContinueGame()
         {
-            Debug.Log("added some points");
+            //Debug.Log("added some points");
+            Points.Instance.AddPoint(20);
             BaseLevel.SetSpeedToPrevious();
         }
 

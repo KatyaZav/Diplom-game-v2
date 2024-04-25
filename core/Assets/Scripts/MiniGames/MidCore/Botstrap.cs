@@ -8,6 +8,7 @@ public class Botstrap : MonoBehaviour
     [SerializeField] MinigamesController _minigamesController;
     [SerializeField] LevelGenerator _levelGenerator;
     [SerializeField] HealthUI _healthUi;
+    [SerializeField] Points _point;
 
     void OnEnable()
     {
@@ -15,6 +16,7 @@ public class Botstrap : MonoBehaviour
         _minigamesController.Init();
         _levelGenerator.Init();
         _healthUi.Init();
+        _point.Init();
 
         BaseLevel.RestartSpeed();
         PlayerController.ReloadHealth();
