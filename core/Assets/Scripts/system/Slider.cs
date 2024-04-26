@@ -10,10 +10,10 @@ public class Slider : MonoBehaviour
 
     protected Coroutine _timer;
         
-    private int _maxValue;
+    private float _maxValue;
     private float _currentValue;
 
-    public virtual void Inizialize(int maxValue)
+    public virtual void Inizialize(float maxValue)
     {
         _maxValue = maxValue;
         _currentValue = _maxValue;

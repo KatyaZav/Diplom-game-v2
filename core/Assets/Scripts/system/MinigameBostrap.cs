@@ -33,7 +33,7 @@ namespace ColorChooseGame
             _gameLogic.Inizialize(rnd);
             _points.Inizialize(0);
 
-            _slider.Inizialize(10*PlayerController.GetHealth());
+            _slider.Inizialize(5*PlayerController.GetHealth() * (8.0f - Level.BaseLevel.GetSpeed()));
         }
 
         private void OnDisable()

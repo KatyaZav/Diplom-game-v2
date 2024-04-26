@@ -5,7 +5,7 @@ namespace ColorChooseGame
     public class HpSlider : Slider
     {
         [SerializeField] private float _costOfMistake;
-        public override void Inizialize(int maxValue)
+        public override void Inizialize(float maxValue)
         {
             GameLogic.ClickedButton += OnClick;
             GameLogic.ChangeColorAnimation += Pause;
