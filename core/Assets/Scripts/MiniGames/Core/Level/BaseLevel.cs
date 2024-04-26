@@ -10,8 +10,8 @@ namespace Level
 
         public static void RestartSpeed()
         {
-            _previosSpeed = 5f;
-            _currentSpeed = 5f;
+            _previosSpeed = 3f;
+            _currentSpeed = 3f;
         }
         public static float GetSpeed() => _currentSpeed;
 
@@ -31,9 +31,11 @@ namespace Level
         {
             _previosSpeed = _currentSpeed;
             _currentSpeed = 0;
+            //Debug.Log("Stop" + _previosSpeed);
         }
         public static void SetSpeedToPrevious()
         {
+            //Debug.Log("Previous" + _previosSpeed);
             _currentSpeed = _previosSpeed;
         }
 
