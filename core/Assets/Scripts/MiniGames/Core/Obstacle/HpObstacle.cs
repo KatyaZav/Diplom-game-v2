@@ -8,6 +8,7 @@ public class HpObstacle : BaseObstacle
 
     public override void OnCollisionPlayer(PlayerController player)
     {
+        //base.OnCollisionPlayer(player);
         player.AddHp();
         Points.Instance.AddPoint(5);
         Instantiate(_effect, transform.position, transform.rotation);

@@ -195,7 +195,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2083630523
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 12
   m_Sprite: {fileID: 1754095109, guid: 7f8cc1839d7b6b24d9a6dabd4ffd2f22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5221,6 +5221,7 @@ GameObject:
   - component: {fileID: 133819338}
   - component: {fileID: 133819339}
   - component: {fileID: 133819340}
+  - component: {fileID: 133819341}
   m_Layer: 5
   m_Name: character
   m_TagString: Untagged
@@ -5334,6 +5335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f996776715c7d2408475d91c72da348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sorce: {fileID: 133819341}
+  _clipGood: {fileID: 8300000, guid: e742461db7a60004794abbd06cbd5bbd, type: 3}
+  _clipBad: {fileID: 8300000, guid: d3cb95124900945429f5b90ddcab7df2, type: 3}
   _generators:
   - name: Left
     _eyeImage: {fileID: 594648587}
@@ -5341,6 +5345,102 @@ MonoBehaviour:
   - name: Right
     _eyeImage: {fileID: 80287048}
     _sideType: 1
+--- !u!82 &133819341
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133819334}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &173551981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6295,7 +6395,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2083630523
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 12
   m_Sprite: {fileID: 1853738649, guid: 7f8cc1839d7b6b24d9a6dabd4ffd2f22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6379,7 +6479,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2083630523
   m_SortingLayer: 1
-  m_SortingOrder: 4
+  m_SortingOrder: 14
   m_Sprite: {fileID: -1564962755, guid: 7f8cc1839d7b6b24d9a6dabd4ffd2f22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6910,7 +7010,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2083630523
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 12
   m_Sprite: {fileID: 1853738649, guid: 7f8cc1839d7b6b24d9a6dabd4ffd2f22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7767,6 +7867,7 @@ GameObject:
   - component: {fileID: 1173470294}
   - component: {fileID: 1173470295}
   - component: {fileID: 1173470296}
+  - component: {fileID: 1173470297}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -7855,6 +7956,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3298f88d0140d6d46bac8f4b98e973e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sorce: {fileID: 1173470297}
+  _clip: {fileID: 8300000, guid: 35097596f3135fb40aaf62c68281525d, type: 3}
+  _clipGood: {fileID: 8300000, guid: d95cf0f8b9ec77248ae78663b8e165c6, type: 3}
   _anim: {fileID: 1173470296}
   _effect: {fileID: 87419130}
   _levelHolder: {fileID: 1973980477}
@@ -7946,6 +8050,102 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!82 &1173470297
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173470289}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1177107072
 GameObject:
   m_ObjectHideFlags: 0
@@ -8267,7 +8467,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2083630523
   m_SortingLayer: 1
-  m_SortingOrder: 6
+  m_SortingOrder: 16
   m_Sprite: {fileID: -1129331427, guid: 7f8cc1839d7b6b24d9a6dabd4ffd2f22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8972,7 +9172,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2083630523
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 11
   m_Sprite: {fileID: 1375206620, guid: 7f8cc1839d7b6b24d9a6dabd4ffd2f22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9256,7 +9456,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2083630523
   m_SortingLayer: 1
-  m_SortingOrder: 5
+  m_SortingOrder: 15
   m_Sprite: {fileID: -2024909596, guid: 7f8cc1839d7b6b24d9a6dabd4ffd2f22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9588,7 +9788,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2083630523
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 12
   m_Sprite: {fileID: 1754095109, guid: 7f8cc1839d7b6b24d9a6dabd4ffd2f22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

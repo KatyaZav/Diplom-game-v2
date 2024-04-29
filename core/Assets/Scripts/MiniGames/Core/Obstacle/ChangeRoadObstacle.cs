@@ -8,6 +8,7 @@ public class ChangeRoadObstacle : BaseObstacle
 
     public override void OnCollisionPlayer(PlayerController player)
     {
+        base.OnCollisionPlayer(player);
         Points.Instance.AddPoint(10);
         player.ChangeRoadLine(_line);
     }

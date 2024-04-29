@@ -15,6 +15,9 @@ namespace ColorChooseGame
         private int _clickWinCount;
         private int _currentkWinCount = 0;
 
+        [SerializeField] AudioSource _sorce;
+        [SerializeField] AudioClip _clipGood, _clipBad;
+
         public bool AddClick()
         {
             _currentkWinCount++;
@@ -88,8 +91,16 @@ namespace ColorChooseGame
             ClickedButton?.Invoke(_generators[(int)type].CheckAnswer(color));
 
             if (_generators[(int)type].CheckAnswer(color))
+            {
+                _sorce.PlayOneShot(_clipGood);
+
                 if (AddClick())
                     return;
+            }
+            else
+            {
+                _sorce.PlayOneShot(_clipBad);
+            }
 
             if (type == GeneratorSideType.right)
             {

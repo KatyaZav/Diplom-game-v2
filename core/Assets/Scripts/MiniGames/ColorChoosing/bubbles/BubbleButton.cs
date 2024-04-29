@@ -11,6 +11,7 @@ namespace ColorChooseGame.Bubbles
         public GeneratorSideType Type;
         public Button button;
 
+        //[SerializeField] AudioSource _audio;
         [SerializeField] private Image _image;
         [SerializeField] private Animator _anim;
         private ColorTypes _colorType;
@@ -42,6 +43,7 @@ namespace ColorChooseGame.Bubbles
             _image.enabled = false;
             button.enabled = false;
 
+           // _audio.Play();
             Instantiate(_colorType.goodEffect, transform.position, Quaternion.identity);
             BubbleClicked?.Invoke(Type, _colorType);
         }

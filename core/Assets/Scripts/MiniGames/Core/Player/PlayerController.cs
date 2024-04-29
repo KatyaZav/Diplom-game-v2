@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public static Action<int> AddedHp; 
     public static Action<int> RemovedHp;
 
+    [SerializeField] AudioSource _sorce;
+    [SerializeField] AudioClip _clip, _clipGood;
+
     [SerializeField] Animator _anim;
     [SerializeField] GameObject _effect;
     [SerializeField] LevelHolder _levelHolder; 
@@ -48,6 +51,9 @@ public class PlayerController : MonoBehaviour
         _health -= hp;
         //MakeUnHittable(1.5f);
 
+        _sorce.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+        _sorce.PlayOneShot(_clip);
+
         RemovedHp?.Invoke(_health);
 
         if (_health <= 0)
@@ -64,6 +70,9 @@ public class PlayerController : MonoBehaviour
     public void AddHp(int hp = 1)
     {
         _health += hp;
+
+        _sorce.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+        _sorce.PlayOneShot(_clipGood);
 
         AddedHp?.Invoke(_health);
     }
