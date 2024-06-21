@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using YG;
 
 public class LoseMenu : MonoBehaviour
 {
@@ -13,5 +14,12 @@ public class LoseMenu : MonoBehaviour
     private void OnEnable()
     {
         _text.text = Points.Instance.GetPoint().ToString("f1");
+
+        if (YG.YandexGame.savesData.points < Points.Instance.GetPoint())
+        {
+            YandexGame.savesData.points = (int)Points.Instance.GetPoint();
+            YandexGame.NewLeaderboardScores("TopRecordCountPlayers", (int)Points.Instance.GetPoint());
+            YandexGame.SaveProgress();
+        }
     }
 }
