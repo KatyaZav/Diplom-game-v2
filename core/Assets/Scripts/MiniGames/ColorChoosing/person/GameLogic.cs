@@ -87,7 +87,6 @@ namespace ColorChooseGame
 
         private void OnButtonClick(GeneratorSideType type, ColorTypes color)
         {
-            //Debug.Log("button clicked");
             ClickedButton?.Invoke(_generators[(int)type].CheckAnswer(color));
 
             if (_generators[(int)type].CheckAnswer(color))
@@ -98,9 +97,7 @@ namespace ColorChooseGame
                     return;
             }
             else
-            {
                 _sorce.PlayOneShot(_clipBad);
-            }
 
             if (type == GeneratorSideType.right)
             {
@@ -112,7 +109,6 @@ namespace ColorChooseGame
                 StopCoroutine(gen2);
                 gen2 = StartCoroutine(ChangeTaskByTime(type));
             }
-
         }
 
         private void ChangeTask(Generator generator)

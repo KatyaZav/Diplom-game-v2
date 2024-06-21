@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
         _colider.enabled = false;
         Invoke("MakeHitteble", time);
     }
-
+    
     private void MakeHitteble()
     {
         _colider.enabled = true;

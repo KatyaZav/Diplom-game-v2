@@ -20,7 +20,5 @@ public abstract class BaseObstacle : MonoBehaviour
             _sorce.PlayOneShot(_clip);
             //Debug.LogWarning(_clip);
         }
-        //else
-        //    Debug.LogError("source is null");
     }
 }

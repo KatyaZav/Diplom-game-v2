@@ -37,7 +37,7 @@ namespace ColorChooseGame.Bubbles
             _colorType = color;
             _image.sprite = _colorType.image;
         }
-
+        
         public void OnButtonClick()
         {
             _image.enabled = false;
